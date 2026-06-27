@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================================================
+        BASIC META
+    ========================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge">
+
+    <title>
+        JK Enterprises | Solar Panels | Power Tools | Hand Tools | Car Care
+    </title>
+
+    <meta
+        name="description"
+        content="JK Enterprises - Wholesale Supplier of Solar Panels, Power Tools, Hand Tools, Car Care Products and Industrial Equipment.">
+
+    <meta
+        name="keywords"
+        content="Solar Panel, Power Tools, Car Care, Hand Tools, JK Enterprises">
+
+    <meta
+        name="theme-color"
+        content="#131921">
+
+    <meta
+        name="robots"
+        content="index,follow">
+
+    <!-- =========================================================
+        OPEN GRAPH
+    ========================================================== -->
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:title" content="JK Enterprises">
+
+    <meta property="og:description"
+        content="Industrial Supplies & Wholesale Products">
+
+    <meta property="og:image"
+        content="assets/images/cover.webp">
+
+    <!-- =========================================================
+        FONT
+    ========================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- =========================================================
+        BOOTSTRAP
+    ========================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
+    <!-- =========================================================
+        CSS
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/app.css">
+
+    <link
+        rel="stylesheet"
+        href="assets/css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================================
+        PAGE LOADER
+    ========================================================== -->
+
+    <div id="loader">
+
+        <div class="spinner-border text-warning"></div>
+
+    </div>
+
+    <!-- =========================================================
+        APPLICATION
+    ========================================================== -->
+
+    <div id="app">
+
+        <!-- Everything is rendered by JavaScript -->
+
+    </div>
+
+    <!-- =========================================================
+        PRODUCT CARD TEMPLATE
+    ========================================================== -->
+
+    <template id="productTemplate">
+
+        <article class="product-card">
+
+            <a class="product-link">
+
+                <div class="product-image">
+
+                    <img
+                        loading="lazy"
+                        decoding="async">
+
+                </div>
+
+                <div class="product-body">
+
+                    <small class="brand"></small>
+
+                    <h3 class="title"></h3>
+
+                    <div class="price">
+
+                        <span class="sale"></span>
+
+                        <span class="mrp"></span>
+
+                    </div>
+
+                    <div class="discount"></div>
+
+                </div>
+
+            </a>
+
+            <div class="product-actions">
+
+                <button class="btn btn-warning add-cart">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </article>
+
+    </template>
+
+    <!-- =========================================================
+        CATEGORY TEMPLATE
+    ========================================================== -->
+
+    <template id="categoryTemplate">
+
+        <button class="category-chip">
+
+            <span></span>
+
+        </button>
+
+    </template>
+
+    <!-- =========================================================
+        SEARCH ITEM TEMPLATE
+    ========================================================== -->
+
+    <template id="searchTemplate">
+
+        <a class="search-item">
+
+            <img>
+
+            <div>
+
+                <h6></h6>
+
+                <small></small>
+
+            </div>
+
+        </a>
+
+    </template>
+
+    <!-- =========================================================
+        CART ITEM TEMPLATE
+    ========================================================== -->
+
+    <template id="cartTemplate">
+
+        <div class="cart-item">
+
+            <img>
+
+            <div class="cart-info">
+
+                <h5></h5>
+
+                <p></p>
+
+            </div>
+
+            <div class="cart-controls">
+
+            </div>
+
+        </div>
+
+    </template>
+
+    <!-- =========================================================
+        TOAST
+    ========================================================== -->
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div
+            id="appToast"
+            class="toast">
+
+            <div class="toast-header">
+
+                <strong class="me-auto">
+
+                    JK Enterprises
+
+                </strong>
+
+                <button
+                    class="btn-close"
+                    data-bs-dismiss="toast">
+
+                </button>
+
+            </div>
+
+            <div class="toast-body">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================================
+        IMAGE MODAL
+    ========================================================== -->
+
+    <div
+        class="modal fade"
+        id="imageModal">
+
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <button
+                    class="btn-close ms-auto m-3"
+                    data-bs-dismiss="modal">
+
+                </button>
+
+                <img
+                    id="modalImage"
+                    class="img-fluid">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================================
+        BOOTSTRAP
+    ========================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- =========================================================
+        APPLICATION
+    ========================================================== -->
+
+    <script
+        type="module"
+        src="assets/js/app.js">
+    </script>
+
+</body>
+
+</html>

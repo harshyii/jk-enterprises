@@ -1,0 +1,211 @@
+/* ==========================================================
+   JK ENTERPRISES
+   BASE STYLES
+========================================================== */
+
+/* ---------- CSS RESET ---------- */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ---------- ROOT ---------- */
+
+html{
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+}
+
+body{
+    font-family:var(--font-family);
+    font-size:var(--font-size-md);
+    font-weight:var(--font-normal);
+    line-height:1.6;
+    color:var(--text);
+    background:var(--body);
+    overflow-x:hidden;
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* ---------- SELECTION ---------- */
+
+::selection{
+    background:var(--primary);
+    color:var(--white);
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+::-webkit-scrollbar{
+    width:10px;
+    height:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f2f2f2;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#c5c5c5;
+    border-radius:999px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#9f9f9f;
+}
+
+/* ---------- IMAGES ---------- */
+
+img{
+    display:block;
+    max-width:100%;
+    height:auto;
+    user-select:none;
+}
+
+/* ---------- LINKS ---------- */
+
+a{
+    color:inherit;
+    text-decoration:none;
+    transition:var(--transition);
+}
+
+a:hover{
+    text-decoration:none;
+}
+
+/* ---------- BUTTONS ---------- */
+
+button{
+    border:none;
+    outline:none;
+    background:none;
+    cursor:pointer;
+    transition:var(--transition);
+}
+
+button:disabled{
+    cursor:not-allowed;
+    opacity:.6;
+}
+
+/* ---------- INPUTS ---------- */
+
+input,
+textarea,
+select{
+    width:100%;
+    font:inherit;
+    outline:none;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    box-shadow:none;
+}
+
+/* ---------- LIST ---------- */
+
+ul,
+ol{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+/* ---------- TABLE ---------- */
+
+table{
+    border-collapse:collapse;
+    width:100%;
+}
+
+/* ---------- HR ---------- */
+
+hr{
+    border:0;
+    border-top:1px solid var(--border);
+    margin:2rem 0;
+}
+
+/* ---------- HEADINGS ---------- */
+
+h1,h2,h3,h4,h5,h6{
+    color:var(--heading);
+    font-weight:var(--font-bold);
+    line-height:1.25;
+    margin:0;
+}
+
+h1{font-size:var(--font-size-3xl);}
+h2{font-size:var(--font-size-2xl);}
+h3{font-size:var(--font-size-xl);}
+h4{font-size:var(--font-size-lg);}
+h5{font-size:var(--font-size-md);}
+h6{font-size:var(--font-size-sm);}
+
+/* ---------- PARAGRAPH ---------- */
+
+p{
+    margin:0 0 1rem;
+    color:var(--text-light);
+}
+
+/* ---------- CONTAINER ---------- */
+
+.container{
+    max-width:var(--container-width);
+}
+
+/* ---------- SECTION ---------- */
+
+.section-spacing{
+    padding:3.5rem 0;
+}
+
+/* ---------- LOADER ---------- */
+
+#pageLoader{
+    position:fixed;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,.95);
+    z-index:var(--z-loader);
+}
+
+/* ---------- HIDDEN ---------- */
+
+.hidden{
+    display:none!important;
+}
+
+/* ---------- FOCUS ---------- */
+
+:focus-visible{
+    outline:2px solid var(--primary);
+    outline-offset:2px;
+}
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none!important;
+        transition:none!important;
+        scroll-behavior:auto!important;
+    }
+
+}
