@@ -29,7 +29,7 @@ export const CONFIG = Object.freeze({
     API:{
 
         BASE_URL:
-        "https://script.google.com/macros/s/AKfycbzKJQU1gSkIAO_3psCrtrFq9pKziVOdhBe93XOdpT-y7ydTFfwvtzjzey-EXUWxvY-6/exec",
+        "https://script.google.com/macros/s/AKfycbzunBnWFnqgbEwG7O2Wozb1sjcWSvn56Ke1Z0BwjnABrTQD_FSUBLmOXOP1rb6DM9sG/exec",
 
         TIMEOUT:15000
 
