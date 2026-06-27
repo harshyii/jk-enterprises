@@ -4,22 +4,20 @@
 ==========================================================*/
 
 import { initializeProducts } from "./api.js";
-
 import router from "./router.js";
+import {
+    initializeUI,
+    renderFeatured,
+    renderLatest
+} from "./ui.js";
 
 import {
-
-    initializeUI,
-
-    renderFeatured,
-
-    renderLatest,
 
     loader,
 
     toast
 
-} from "./ui.js";
+} from "./utils.js";
 
 
 /*==========================================================

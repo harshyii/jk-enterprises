@@ -3,35 +3,43 @@
  UI ENGINE
  Part 1
 ==========================================================*/
+import CONFIG, { APP } from "./config.js";
 
-import CONFIG,{APP} from "./config.js";
-
-import{
-
+import {
     money,
-
-    $,
-
-    create,
-
-    toast
-
-}from "./utils.js";
-
-import{
-
-    cartCount
-
-}from "./cart.js";
-
-import{
-
+    discount,
     featured,
+    latest,
+    create,
+    toast,
+    $
+} from "./utils.js";
 
-    latest
+import {
+    cartCount,
+    addToCart,
+    inCart,
+    subtotal,
+    grandTotal,
+    shipping,
+    totalDiscount,
+    removeFromCart,
+    updateQuantity,
+    orderPayload,
+    clearCart
+} from "./cart.js";
 
-}from "./utils.js";
+import {
+    getProduct,
+    submitOrder,
+    searchProducts
+} from "./api.js";
 
+import {
+    product,
+    search,
+    navigate
+} from "./router.js";
 
 /*==========================================================
  ROOT
@@ -502,29 +510,6 @@ export function renderHome(){
     );
 
 }
-/*==========================================================
- JK ENTERPRISES
- UI ENGINE
- Part 2
-==========================================================*/
-
-import {
-    product,
-    search as searchRoute
-} from "./router.js";
-
-import {
-    addToCart,
-    inCart
-} from "./cart.js";
-
-import {
-    featured,
-    latest,
-    money,
-    discount,
-    toast
-} from "./utils.js";
 
 
 /*==========================================================
@@ -900,23 +885,7 @@ export function renderSearch(keyword){
     );
 
 }
-/*==========================================================
- JK ENTERPRISES
- UI ENGINE
- Part 3
-==========================================================*/
 
-import { getProduct } from "./api.js";
-
-import {
-    addToCart
-} from "./cart.js";
-
-import {
-    money,
-    discount,
-    toast
-} from "./utils.js";
 
 
 /*==========================================================
@@ -1287,30 +1256,7 @@ class="product-grid">
     );
 
 }
-/*==========================================================
- JK ENTERPRISES
- UI ENGINE
- Part 4
-==========================================================*/
 
-import {
-
-    subtotal,
-    grandTotal,
-    shipping,
-    totalDiscount,
-    removeFromCart,
-    updateQuantity,
-    orderPayload,
-    clearCart
-
-} from "./cart.js";
-
-import {
-
-    submitOrder
-
-} from "./api.js";
 
 
 /*==========================================================
@@ -1770,14 +1716,7 @@ Continue Shopping
     append(renderFooter());
 
 }
-/*==========================================================
- JK ENTERPRISES
- UI ENGINE
- Part 5
-==========================================================*/
 
-import { searchProducts } from "./api.js";
-import { search, navigate } from "./router.js";
 
 /*==========================================================
  HEADER EVENTS

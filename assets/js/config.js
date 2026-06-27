@@ -29,7 +29,7 @@ export const CONFIG = Object.freeze({
     API:{
 
         BASE_URL:
-        "https://script.google.com/macros/library/d/13ry_8TYiAJY4vthftTMQ7nhENQ0zHP8r79cWHGhU6RLo6vd2iWQTFT-h/1",
+        "https://script.google.com/macros/s/AKfycbzKJQU1gSkIAO_3psCrtrFq9pKziVOdhBe93XOdpT-y7ydTFfwvtzjzey-EXUWxvY-6/exec",
 
         TIMEOUT:15000
 
@@ -273,3 +273,4 @@ export const EVENT = Object.freeze({
 ==========================================================*/
 
 export default CONFIG;
+
