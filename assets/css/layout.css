@@ -1,351 +1,459 @@
-/* ==========================================================
-   JK ENTERPRISES
-   LAYOUT
-========================================================== */
+/*==========================================================
+ JK ENTERPRISES
+ LAYOUT
+ Version 2.0
+==========================================================*/
 
-/* ===========================
-   HEADER
-=========================== */
 
-.site-header{
-    position:sticky;
-    top:0;
-    z-index:var(--z-header);
-    background:var(--white);
-    box-shadow:var(--shadow-sm);
+/*==========================================================
+ CONTAINER
+==========================================================*/
+
+.container{
+
+width:100%;
+
+max-width:var(--container-max);
+
+margin:auto;
+
+padding-inline:var(--container-padding);
+
 }
 
-/* ===========================
-   TOP BAR
-=========================== */
 
-.header-top{
-    background:var(--secondary);
-    color:var(--white);
-    font-size:var(--font-size-sm);
-    min-height:var(--topbar-height);
-    display:flex;
-    align-items:center;
-}
-
-.header-top a{
-    color:var(--white);
-    transition:var(--transition-fast);
-}
-
-.header-top a:hover{
-    color:var(--primary);
-}
-
-/* ===========================
-   MAIN HEADER
-=========================== */
-
-.header-main{
-    background:var(--white);
-    padding:.85rem 0;
-}
-
-.site-logo{
-    display:flex;
-    align-items:center;
-}
-
-.site-logo img{
-    max-height:56px;
-    width:auto;
-    object-fit:contain;
-}
-
-/* ===========================
-   SEARCH
-=========================== */
-
-#searchForm{
-    position:relative;
-}
-
-#searchForm .input-group{
-    overflow:hidden;
-    border-radius:var(--radius-round);
-    box-shadow:var(--shadow-xs);
-}
-
-#searchInput{
-    border:none;
-    min-height:48px;
-    padding:0 1rem;
-    font-size:var(--font-size-md);
-}
-
-#searchInput:focus{
-    box-shadow:none;
-}
-
-#searchForm .btn{
-    min-width:60px;
-}
-
-/* ===========================
-   SEARCH SUGGESTIONS
-=========================== */
-
-#searchSuggestions{
-    position:absolute;
-    top:100%;
-    left:0;
-    right:0;
-    margin-top:.35rem;
-    background:var(--white);
-    border-radius:var(--radius-md);
-    box-shadow:var(--shadow-lg);
-    display:none;
-    overflow:hidden;
-    z-index:var(--z-dropdown);
-}
-
-/* ===========================
-   HEADER ACTIONS
-=========================== */
-
-#cartBtn{
-    position:relative;
-    min-height:48px;
-    padding:.65rem 1rem;
-    border-radius:var(--radius-round);
-}
-
-#cartCount{
-    font-size:.7rem;
-}
-
-/* ===========================
-   NAVBAR
-=========================== */
-
-.navbar{
-    background:var(--secondary);
-    padding:.45rem 0;
-}
-
-.navbar-nav{
-    gap:.4rem;
-}
-
-.nav-link{
-    color:rgba(255,255,255,.92)!important;
-    padding:.6rem .9rem!important;
-    border-radius:var(--radius-sm);
-    transition:var(--transition-fast);
-}
-
-.nav-link:hover,
-.nav-link.active{
-    background:rgba(255,255,255,.12);
-}
-
-/* ===========================
-   HERO
-=========================== */
-
-.hero-section{
-    padding:1.5rem 0;
-}
-
-.hero-banner{
-    position:relative;
-    overflow:hidden;
-    border-radius:var(--card-radius);
-    background:var(--white);
-    box-shadow:var(--shadow-md);
-}
-
-.hero-banner img{
-    width:100%;
-    aspect-ratio:16/6;
-    object-fit:cover;
-}
-
-.hero-content{
-    position:absolute;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding:4rem;
-    max-width:600px;
-    background:linear-gradient(
-        90deg,
-        rgba(0,0,0,.55),
-        rgba(0,0,0,.15),
-        transparent
-    );
-}
-
-.hero-content h1{
-    color:var(--white);
-    margin-bottom:1rem;
-}
-
-.hero-content p{
-    color:#f8f9fa;
-    margin-bottom:2rem;
-}
-
-/* ===========================
-   SECTION HEADER
-=========================== */
-
-.section-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:1.5rem;
-}
-
-.section-header h2{
-    font-size:1.6rem;
-}
-
-.view-all{
-    color:var(--primary);
-    font-weight:600;
-}
-
-/* ===========================
-   CATEGORY SCROLLER
-=========================== */
-
-.category-scroll,
-.brand-scroll{
-    display:flex;
-    gap:1rem;
-    overflow-x:auto;
-    overflow-y:hidden;
-    padding-bottom:.4rem;
-    scroll-behavior:smooth;
-}
-
-.category-scroll::-webkit-scrollbar,
-.brand-scroll::-webkit-scrollbar{
-    display:none;
-}
-
-/* ===========================
-   PRODUCT GRID
-=========================== */
-
-.product-grid{
-    min-height:260px;
-}
-
-/* ===========================
-   FEATURE STRIP
-=========================== */
-
-.feature-icon{
-    font-size:2rem;
-    color:var(--primary);
-    margin-bottom:.75rem;
-}
-
-/* ===========================
-   EMPTY STATE
-=========================== */
-
-.empty-state{
-    text-align:center;
-    padding:5rem 1rem;
-}
-
-.empty-state img{
-    width:180px;
-    margin:auto;
-    margin-bottom:2rem;
-}
-
-.empty-state h2{
-    margin-bottom:.75rem;
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-
-.site-footer{
-    background:var(--secondary);
-    color:rgba(255,255,255,.9);
-    margin-top:4rem;
-    padding:4rem 0 2rem;
-}
-
-.site-footer h5{
-    color:var(--white);
-    margin-bottom:1.2rem;
-}
-
-.site-footer ul{
-    display:flex;
-    flex-direction:column;
-    gap:.75rem;
-}
-
-.site-footer a{
-    color:rgba(255,255,255,.82);
-}
-
-.site-footer a:hover{
-    color:var(--primary);
-}
-
-.footer-logo{
-    max-width:180px;
-    margin-bottom:1rem;
-}
-
-/* ===========================
-   FLOATING BUTTONS
-=========================== */
-
-.floating-buttons{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    display:flex;
-    flex-direction:column;
-    gap:.8rem;
-    z-index:var(--z-floating);
-}
-
-.floating-btn{
-    width:52px;
-    height:52px;
-    border:none;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--white);
-    box-shadow:var(--shadow-lg);
-    transition:var(--transition);
-}
-
-.floating-btn:hover{
-    transform:translateY(-3px);
-}
-
-.whatsapp-btn{
-    background:#25D366;
-}
-
-.top-btn{
-    background:var(--secondary);
-}
-
-/* ===========================
-   MAIN
-=========================== */
+/*==========================================================
+ MAIN
+==========================================================*/
 
 main{
-    min-height:70vh;
+
+flex:1;
+
+width:100%;
+
+padding-block:var(--space-8);
+
+}
+
+
+/*==========================================================
+ SECTION
+==========================================================*/
+
+section{
+
+margin-bottom:var(--space-12);
+
+}
+
+
+/*==========================================================
+ HEADER
+==========================================================*/
+
+.site-header{
+
+position:sticky;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:var(--header-height);
+
+background:var(--white);
+
+z-index:var(--z-header);
+
+box-shadow:var(--shadow-sm);
+
+}
+
+
+/*==========================================================
+ HEADER CONTAINER
+==========================================================*/
+
+.header-container{
+
+height:100%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:var(--space-6);
+
+}
+
+
+/*==========================================================
+ LOGO
+==========================================================*/
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+font-size:var(--font-xl);
+
+font-weight:var(--fw-black);
+
+white-space:nowrap;
+
+}
+
+
+/*==========================================================
+ SEARCH
+==========================================================*/
+
+.search-wrapper{
+
+flex:1;
+
+max-width:700px;
+
+}
+
+
+/*==========================================================
+ HEADER ACTIONS
+==========================================================*/
+
+.header-actions{
+
+display:flex;
+
+align-items:center;
+
+gap:var(--space-4);
+
+}
+
+
+/*==========================================================
+ HERO
+==========================================================*/
+
+.hero{
+
+display:grid;
+
+align-items:center;
+
+min-height:420px;
+
+border-radius:var(--radius-xl);
+
+overflow:hidden;
+
+background:var(--secondary);
+
+margin-bottom:var(--space-10);
+
+}
+
+
+/*==========================================================
+ HERO CONTENT
+==========================================================*/
+
+.hero-content{
+
+padding:var(--space-10);
+
+max-width:700px;
+
+}
+
+
+/*==========================================================
+ GRID
+==========================================================*/
+
+.grid{
+
+display:grid;
+
+gap:var(--space-5);
+
+}
+
+
+/*==========================================================
+ PRODUCTS
+==========================================================*/
+
+.products-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+
+auto-fill,
+
+minmax(250px,1fr)
+
+);
+
+gap:24px;
+
+}
+
+
+/*==========================================================
+ CATEGORY ROW
+==========================================================*/
+
+.categories{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+overflow-x:auto;
+
+padding-bottom:8px;
+
+scrollbar-width:none;
+
+}
+
+.categories::-webkit-scrollbar{
+
+display:none;
+
+}
+
+
+/*==========================================================
+ PRODUCT PAGE
+==========================================================*/
+
+.product-layout{
+
+display:grid;
+
+grid-template-columns:
+
+1fr
+
+1fr;
+
+gap:48px;
+
+align-items:start;
+
+}
+
+
+/*==========================================================
+ PRODUCT IMAGES
+==========================================================*/
+
+.product-gallery{
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+
+/*==========================================================
+ PRODUCT INFO
+==========================================================*/
+
+.product-info{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+
+/*==========================================================
+ RELATED
+==========================================================*/
+
+.related-products{
+
+margin-top:var(--space-12);
+
+}
+
+
+/*==========================================================
+ CART
+==========================================================*/
+
+.cart-layout{
+
+display:grid;
+
+grid-template-columns:
+
+2fr
+
+1fr;
+
+gap:32px;
+
+align-items:start;
+
+}
+
+
+/*==========================================================
+ CHECKOUT
+==========================================================*/
+
+.checkout-layout{
+
+display:grid;
+
+grid-template-columns:
+
+2fr
+
+1fr;
+
+gap:40px;
+
+align-items:start;
+
+}
+
+
+/*==========================================================
+ SIDEBAR
+==========================================================*/
+
+.sidebar{
+
+position:sticky;
+
+top:90px;
+
+}
+
+
+/*==========================================================
+ FOOTER
+==========================================================*/
+
+.site-footer{
+
+margin-top:auto;
+
+background:var(--secondary);
+
+color:var(--white);
+
+padding:48px 0;
+
+}
+
+
+/*==========================================================
+ FOOTER GRID
+==========================================================*/
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(4,1fr);
+
+gap:40px;
+
+}
+
+
+/*==========================================================
+ PAGE TITLE
+==========================================================*/
+
+.page-title{
+
+margin-bottom:var(--space-8);
+
+}
+
+
+/*==========================================================
+ EMPTY STATE
+==========================================================*/
+
+.empty-state{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+padding:80px 20px;
+
+text-align:center;
+
+}
+
+
+/*==========================================================
+ BREADCRUMB
+==========================================================*/
+
+.breadcrumb{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+margin-bottom:20px;
+
+font-size:var(--font-sm);
+
+color:var(--text-light);
+
+}
+
+
+/*==========================================================
+ DIVIDER
+==========================================================*/
+
+.divider{
+
+width:100%;
+
+height:1px;
+
+background:var(--border);
+
+margin:24px 0;
+
 }

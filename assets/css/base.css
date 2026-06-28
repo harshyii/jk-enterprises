@@ -1,211 +1,452 @@
-/* ==========================================================
-   JK ENTERPRISES
-   BASE STYLES
-========================================================== */
+/*==========================================================
+ JK ENTERPRISES
+ BASE
+ Version 2.0
+==========================================================*/
 
-/* ---------- CSS RESET ---------- */
+
+/*==========================================================
+ RESET
+==========================================================*/
 
 *,
 *::before,
 *::after{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
 }
 
-/* ---------- ROOT ---------- */
+
+/*==========================================================
+ HTML
+==========================================================*/
 
 html{
-    scroll-behavior:smooth;
-    -webkit-text-size-adjust:100%;
+
+font-size:16px;
+
+scroll-behavior:smooth;
+
+-webkit-text-size-adjust:100%;
+
 }
+
+
+/*==========================================================
+ BODY
+==========================================================*/
 
 body{
-    font-family:var(--font-family);
-    font-size:var(--font-size-md);
-    font-weight:var(--font-normal);
-    line-height:1.6;
-    color:var(--text);
-    background:var(--body);
-    overflow-x:hidden;
-    text-rendering:optimizeLegibility;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
+
+font-family:var(--font-family);
+
+font-size:var(--font-md);
+
+font-weight:var(--fw-normal);
+
+line-height:var(--line-height);
+
+color:var(--text);
+
+background:var(--bg);
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+text-rendering:optimizeLegibility;
+
+-webkit-font-smoothing:antialiased;
+
 }
 
-/* ---------- SELECTION ---------- */
 
-::selection{
-    background:var(--primary);
-    color:var(--white);
+/*==========================================================
+ ROOT
+==========================================================*/
+
+#app{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
 }
 
-/* ---------- SCROLLBAR ---------- */
 
-::-webkit-scrollbar{
-    width:10px;
-    height:10px;
-}
-
-::-webkit-scrollbar-track{
-    background:#f2f2f2;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#c5c5c5;
-    border-radius:999px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background:#9f9f9f;
-}
-
-/* ---------- IMAGES ---------- */
+/*==========================================================
+ IMAGES
+==========================================================*/
 
 img{
-    display:block;
-    max-width:100%;
-    height:auto;
-    user-select:none;
+
+display:block;
+
+width:100%;
+
+max-width:100%;
+
+height:auto;
+
+object-fit:cover;
+
+border:0;
+
 }
 
-/* ---------- LINKS ---------- */
+
+/*==========================================================
+ LINKS
+==========================================================*/
 
 a{
-    color:inherit;
-    text-decoration:none;
-    transition:var(--transition);
+
+color:inherit;
+
+text-decoration:none;
+
+transition:var(--transition);
+
 }
 
 a:hover{
-    text-decoration:none;
+
+text-decoration:none;
+
 }
 
-/* ---------- BUTTONS ---------- */
+
+/*==========================================================
+ LISTS
+==========================================================*/
+
+ul,
+ol{
+
+list-style:none;
+
+}
+
+
+/*==========================================================
+ BUTTONS
+==========================================================*/
 
 button{
-    border:none;
-    outline:none;
-    background:none;
-    cursor:pointer;
-    transition:var(--transition);
+
+font:inherit;
+
+border:none;
+
+background:none;
+
+cursor:pointer;
+
+outline:none;
+
+transition:var(--transition);
+
 }
 
 button:disabled{
-    cursor:not-allowed;
-    opacity:.6;
+
+cursor:not-allowed;
+
+opacity:.6;
+
 }
 
-/* ---------- INPUTS ---------- */
+
+/*==========================================================
+ INPUTS
+==========================================================*/
 
 input,
 textarea,
 select{
-    width:100%;
-    font:inherit;
-    outline:none;
+
+font:inherit;
+
+color:inherit;
+
+background:var(--white);
+
+border:1px solid var(--border);
+
+outline:none;
+
+transition:var(--transition);
+
 }
 
 input:focus,
 textarea:focus,
 select:focus{
-    box-shadow:none;
+
+border-color:var(--primary);
+
+box-shadow:0 0 0 3px rgba(255,153,0,.15);
+
 }
 
-/* ---------- LIST ---------- */
 
-ul,
-ol{
-    list-style:none;
-    margin:0;
-    padding:0;
+/*==========================================================
+ TEXTAREA
+==========================================================*/
+
+textarea{
+
+resize:vertical;
+
+min-height:120px;
+
 }
 
-/* ---------- TABLE ---------- */
+
+/*==========================================================
+ TABLE
+==========================================================*/
 
 table{
-    border-collapse:collapse;
-    width:100%;
+
+width:100%;
+
+border-collapse:collapse;
+
 }
 
-/* ---------- HR ---------- */
 
-hr{
-    border:0;
-    border-top:1px solid var(--border);
-    margin:2rem 0;
-}
-
-/* ---------- HEADINGS ---------- */
+/*==========================================================
+ HEADINGS
+==========================================================*/
 
 h1,h2,h3,h4,h5,h6{
-    color:var(--heading);
-    font-weight:var(--font-bold);
-    line-height:1.25;
-    margin:0;
+
+font-weight:var(--fw-bold);
+
+line-height:1.25;
+
+color:var(--secondary);
+
 }
 
-h1{font-size:var(--font-size-3xl);}
-h2{font-size:var(--font-size-2xl);}
-h3{font-size:var(--font-size-xl);}
-h4{font-size:var(--font-size-lg);}
-h5{font-size:var(--font-size-md);}
-h6{font-size:var(--font-size-sm);}
+h1{
 
-/* ---------- PARAGRAPH ---------- */
+font-size:var(--font-3xl);
+
+}
+
+h2{
+
+font-size:var(--font-2xl);
+
+}
+
+h3{
+
+font-size:var(--font-xl);
+
+}
+
+h4{
+
+font-size:var(--font-lg);
+
+}
+
+h5{
+
+font-size:var(--font-md);
+
+}
+
+h6{
+
+font-size:var(--font-sm);
+
+}
+
+
+/*==========================================================
+ PARAGRAPH
+==========================================================*/
 
 p{
-    margin:0 0 1rem;
-    color:var(--text-light);
+
+margin-bottom:1rem;
+
+color:var(--text-light);
+
 }
 
-/* ---------- CONTAINER ---------- */
 
-.container{
-    max-width:var(--container-width);
+/*==========================================================
+ SELECTION
+==========================================================*/
+
+::selection{
+
+background:var(--primary);
+
+color:var(--white);
+
 }
 
-/* ---------- SECTION ---------- */
 
-.section-spacing{
-    padding:3.5rem 0;
+/*==========================================================
+ SCROLLBAR
+==========================================================*/
+
+::-webkit-scrollbar{
+
+width:8px;
+
+height:8px;
+
 }
 
-/* ---------- LOADER ---------- */
+::-webkit-scrollbar-track{
 
-#pageLoader{
-    position:fixed;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:rgba(255,255,255,.95);
-    z-index:var(--z-loader);
+background:var(--bg);
+
 }
 
-/* ---------- HIDDEN ---------- */
+::-webkit-scrollbar-thumb{
+
+background:var(--primary);
+
+border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:var(--primary-hover);
+
+}
+
+
+/*==========================================================
+ UTILITIES
+==========================================================*/
 
 .hidden{
-    display:none!important;
+
+display:none!important;
+
 }
 
-/* ---------- FOCUS ---------- */
+.invisible{
 
-:focus-visible{
-    outline:2px solid var(--primary);
-    outline-offset:2px;
+visibility:hidden;
+
 }
 
-/* ---------- REDUCED MOTION ---------- */
+.flex{
 
-@media (prefers-reduced-motion:reduce){
+display:flex;
 
-    *,
-    *::before,
-    *::after{
-        animation:none!important;
-        transition:none!important;
-        scroll-behavior:auto!important;
-    }
+}
+
+.grid{
+
+display:grid;
+
+}
+
+.center{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.text-center{
+
+text-align:center;
+
+}
+
+.w-100{
+
+width:100%;
+
+}
+
+.h-100{
+
+height:100%;
+
+}
+
+.round{
+
+border-radius:50%;
+
+}
+
+
+/*==========================================================
+ LOADER
+==========================================================*/
+
+#loader{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:rgba(255,255,255,.85);
+
+backdrop-filter:blur(3px);
+
+z-index:9999;
+
+}
+
+
+/*==========================================================
+ ANIMATION
+==========================================================*/
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(8px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+.fade-in{
+
+animation:fadeIn .35s ease;
 
 }

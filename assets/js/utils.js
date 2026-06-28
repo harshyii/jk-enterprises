@@ -452,3 +452,31 @@ export function search(products, keyword) {
     );
 
 }
+
+/*==========================================================
+ DYNAMIC UPI QR
+==========================================================*/
+
+export function generateUPIQR(amount){
+
+    amount=Number(amount).toFixed(2);
+
+    const upi=
+
+        `upi://pay?`+
+
+        `pa=${encodeURIComponent(CONFIG.PAYMENT.UPI_ID)}`+
+
+        `&pn=${encodeURIComponent(CONFIG.PAYMENT.NAME)}`+
+
+        `&am=${amount}`+
+
+        `&cu=${CONFIG.PAYMENT.CURRENCY}`+
+
+        `&tn=${encodeURIComponent(CONFIG.PAYMENT.NOTE)}`;
+
+    return
+
+`https://quickchart.io/qr?size=320&text=${encodeURIComponent(upi)}`;
+
+}

@@ -181,12 +181,17 @@ export const CONFIG = Object.freeze({
 
     PAYMENT:{
 
-        MODE:"UPI",
+    MODE:"UPI",
 
-        QR_IMAGE:
-        "assets/images/upi-qr.webp"
+    NAME:"JK Enterprises",
 
-    },
+    UPI_ID:"9050623210@sbi",
+
+    CURRENCY:"INR",
+
+    NOTE:"Order Payment"
+
+},
 
 
 
