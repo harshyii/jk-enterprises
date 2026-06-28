@@ -1,0 +1,36 @@
+jk-enterprises/
+│
+├── index.html
+├── product.html
+├── cart.html
+├── checkout.html
+├── search.html
+├── categories.html
+├── 404.html
+│
+├── assets/
+│   ├── css/
+│   │      style.css
+│   │      variables.css
+│   │      responsive.css
+│   │
+│   ├── js/
+│   │      app.js
+│   │      api.js
+│   │      cart.js
+│   │      ui.js
+│   │      search.js
+│   │      lazyload.js
+│   │      utils.js
+│   │
+│   ├── images/
+│   ├── icons/
+│   └── fonts/
+│
+├── components/
+│      header.html
+│      footer.html
+│      navbar.html
+│      product-card.html
+│
+└── README.md
