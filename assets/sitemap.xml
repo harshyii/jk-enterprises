@@ -1,26 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<sitemapindex
-xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<sitemap>
+    <sitemap>
+        <loc>
+            https://harshyii.github.io/jk-enterprises/assets/sitemap-pages.xml
+        </loc>
+    </sitemap>
 
-<loc>
-
-https://harshyii.github.io/jk-enterprises/sitemap-pages.xml
-
-</loc>
-
-</sitemap>
-
-<sitemap>
-
-<loc>
-
-https://script.google.com/macros/s/AKfycbzunBnWFnqgbEwG7O2Wozb1sjcWSvn56Ke1Z0BwjnABrTQD_FSUBLmOXOP1rb6DM9sG/exec?action=sitemap
-
-</loc>
-
-</sitemap>
+    <sitemap>
+        <loc>
+            https://script.google.com/macros/s/AKfycbzunBnWFnqgbEwG702Wozb1sjcWSvn56Ke1Z0BwjnABrTQD_FSUBLm0XOP1rb6DM9sG/exec?action=sitemap
+        </loc>
+    </sitemap>
 
 </sitemapindex>
