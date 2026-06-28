@@ -86,29 +86,7 @@ export function renderHeader(){
 
     header.innerHTML=`
 
-<div class="topbar">
 
-<div class="container">
-
-<div class="topbar-left">
-
-Wholesale Supplier
-
-</div>
-
-<div class="topbar-right">
-
-<a href="#contact">
-
-Contact
-
-</a>
-
-</div>
-
-</div>
-
-</div>
 
 
 <div class="navbar">
