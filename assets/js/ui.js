@@ -94,7 +94,7 @@ export function renderHeader(){
 
     <div class="logo">
 
-        <a href="./">JK</a>
+        <a href="./">JK Enterprises</a>
 
     </div>
 
@@ -1273,28 +1273,28 @@ Shopping Cart
 
 <hr>
 
-<div class="d-flex justify-content-between">
-
-<span>Subtotal</span>
-
-<strong id="subtotal"></strong>
-
+<div class="d-flex justify-content-between mb-2">
+    <span>MRP Total</span>
+    <span class="summary-mrp">${money(mrpTotal())}</span>
 </div>
 
-<div class="d-flex justify-content-between">
-
-<span>Discount</span>
-
-<strong id="discount"></strong>
-
+<div class="d-flex justify-content-between mb-2">
+    <span>You Save</span>
+    <span class="summary-discount">- ${money(discountTotal())}</span>
 </div>
 
+<div class="d-flex justify-content-between mb-2">
+    <span>Shipping</span>
+    <span class="summary-free">
+        ${shipping() === 0 ? "FREE" : money(shipping())}
+    </span>
+</div>
+
+<hr>
+
 <div class="d-flex justify-content-between">
-
-<span>Shipping</span>
-
-<strong id="shipping"></strong>
-
+    <strong>Grand Total</strong>
+    <strong class="summary-total">${money(grandTotal())}</strong>
 </div>
 
 <hr>

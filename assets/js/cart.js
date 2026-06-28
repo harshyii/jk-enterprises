@@ -103,17 +103,17 @@ function indexOf(id){
  ADD
 ==========================================================*/
 
-export function addToCart(product,qty=1){
+export function addToCart(product, qty = 1){
 
-    qty=Number(qty);
+    qty = Number(qty);
 
-    if(qty<1) qty=1;
+    if(qty < 1) qty = 1;
 
-    const index=indexOf(product.ProductID);
+    const index = indexOf(product.ProductID);
 
-    if(index>-1){
+    if(index > -1){
 
-        APP.cart[index].qty+=qty;
+        APP.cart[index].qty += qty;
 
     }
 
@@ -121,23 +121,22 @@ export function addToCart(product,qty=1){
 
         APP.cart.push({
 
-            id:String(product.ProductID),
+            id: String(product.ProductID),
 
-            sku:product.SKU,
+            sku: product.SKU || "",
 
-            name:product["Item Name"],
+            name: product["Item Name"],
 
-            brand:product.Brand,
+            brand: product.Brand || "",
 
-            image:product.Image1,
+            image: product.Image1 || "",
 
-            price:Number(product["Sale Price"]),
+            price: parseFloat(product["Sale Price"]) || 0,
 
-            mrp:Number(product.MRP),
+            mrp: parseFloat(product.MRP) || parseFloat(product["Sale Price"]) || 0,
+            qty: qty,
 
-            qty,
-
-            stock:Number(product["Stock Quantity"])
+            stock: Number(product["Stock Quantity"]) || 0
 
         });
 
@@ -145,7 +144,10 @@ export function addToCart(product,qty=1){
 
     saveCart();
 
+    return cartCount();
+
 }
+
 
 
 /*==========================================================
@@ -225,27 +227,9 @@ export function clearCart(){
 }
 
 
-/*==========================================================
- SUBTOTAL
-==========================================================*/
-
-export function subtotal(){
-
-    return APP.cart.reduce(
-
-        (sum,item)=>
-
-        sum+(item.price*item.qty),
-
-        0
-
-    );
-
-}
-
 
 /*==========================================================
- MRP TOTAL
+MRP TOTAL
 ==========================================================*/
 
 export function mrpTotal(){
@@ -254,7 +238,7 @@ export function mrpTotal(){
 
         (sum,item)=>
 
-        sum + (Number(item.mrp || item.price) * item.qty),
+        sum + (Number(item.mrp || item.MRP || item.price) * item.qty),
 
         0
 
@@ -262,46 +246,67 @@ export function mrpTotal(){
 
 }
 
+
 /*==========================================================
- DISCOUNT
+SALE SUBTOTAL
+==========================================================*/
+
+export function subtotal(){
+
+    return APP.cart.reduce(
+
+        (sum,item)=>
+
+        sum + (Number(item.price || item["Sale Price"]) * item.qty),
+
+        0
+
+    );
+
+}
+
+
+/*==========================================================
+TOTAL DISCOUNT
 ==========================================================*/
 
 export function discountTotal(){
 
-    return mrpTotal() - subtotal();
+    return Math.max(
+
+        0,
+
+        mrpTotal() - subtotal()
+
+    );
 
 }
 
 
-
 /*==========================================================
- SHIPPING
+SHIPPING
 ==========================================================*/
 
 export function shipping(){
 
-    const amount=subtotal();
-
-    if(amount>=999)
+    if(APP.cart.length===0)
 
         return 0;
 
-    return 80;
+    return subtotal()>=999 ? 0 : 80;
 
 }
 
 
 /*==========================================================
- GRAND TOTAL
+GRAND TOTAL
 ==========================================================*/
 
 export function grandTotal(){
 
-    return subtotal()+shipping();
+    return subtotal() + shipping();
 
 }
-
-
 
 /*==========================================================
  ITEM
@@ -346,6 +351,8 @@ export function orderItems(){
         Name:item.name,
 
         Qty:item.qty,
+
+        MRP:item.mrp,
 
         Price:item.price,
 

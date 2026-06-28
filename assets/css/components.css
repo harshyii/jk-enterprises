@@ -296,14 +296,28 @@ color:#999;
 
 }
 
-.discount{
+.summary-mrp{
+    color:#dc3545;
+    font-weight:600;
+}
 
-font-size:15px;
+/* Discount */
+.summary-discount{
+    color:#198754;
+    font-weight:700;
+}
 
-font-weight:700;
+/* Grand Total */
+.summary-total{
+    color:#212529;
+    font-size:26px;
+    font-weight:800;
+}
 
-color:#0f8a00;
-
+/* Free Shipping */
+.summary-free{
+    color:#198754;
+    font-weight:700;
 }
 
 .product-actions{
@@ -634,11 +648,11 @@ padding-inline:var(--container-padding);
 
 .logo{
 
-    flex:0 0 70px;
+    flex:0 0 170px;
 
-    min-width:70px;
+    min-width:470px;
 
-    font-size:20px;
+    font-size:25px;
 
     font-weight:800;
 
@@ -704,7 +718,7 @@ padding-inline:var(--container-padding);
 
 .cart-btn{
 
-    position:relative;
+    position:flex-end;
 
     width:46px;
 
@@ -720,7 +734,7 @@ padding-inline:var(--container-padding);
 
     justify-content:center;
 
-    align-items:flex-end;
+    align-items:center;
 
     cursor:pointer;
 
