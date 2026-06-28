@@ -588,6 +588,38 @@
         type="module"
         src="assets/js/app.js">
     </script>
+<script>
+/* ===========================
+   Google Analytics 4
+=========================== */
+
+(function () {
+    const MEASUREMENT_ID = "G-52M29P8R6N";
+
+    if (!MEASUREMENT_ID) return;
+
+    // Prevent duplicate loading
+    if (window.gtag) return;
+
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`;
+    document.head.appendChild(s);
+
+    window.dataLayer = window.dataLayer || [];
+
+    window.gtag = function () {
+        dataLayer.push(arguments);
+    };
+
+    gtag("js", new Date());
+
+    gtag("config", MEASUREMENT_ID, {
+        page_path: location.pathname + location.search,
+        send_page_view: true
+    });
+})();
+</script>
 
 </body>
 
