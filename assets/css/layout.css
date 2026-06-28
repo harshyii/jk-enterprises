@@ -196,21 +196,66 @@ gap:var(--space-5);
 
 display:grid;
 
-grid-template-columns:
-
-repeat(
-
-auto-fill,
-
-minmax(250px,1fr)
-
-);
-
 gap:24px;
+
+grid-template-columns:
+repeat(2,minmax(0,1fr));
 
 }
 
+/* Large Desktop */
 
+@media (min-width:1600px){
+
+.products-grid{
+
+grid-template-columns:
+repeat(3,minmax(0,1fr));
+
+}
+
+}
+
+/* Laptop */
+
+@media (max-width:1199px){
+
+.products-grid{
+
+grid-template-columns:
+repeat(2,minmax(0,1fr));
+
+}
+
+}
+
+/* Tablet */
+
+@media (max-width:991px){
+
+.products-grid{
+
+grid-template-columns:
+repeat(2,minmax(0,1fr));
+
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:767px){
+
+.products-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:12px;
+
+}
+
+}
 /*==========================================================
  CATEGORY ROW
 ==========================================================*/
