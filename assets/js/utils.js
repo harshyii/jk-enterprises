@@ -454,29 +454,29 @@ export function search(products, keyword) {
 }
 
 /*==========================================================
- DYNAMIC UPI QR
+GENERATE QR
 ==========================================================*/
 
-export function generateUPIQR(amount){
+const qrContainer = document.getElementById("upiQR");
 
-    amount=Number(amount).toFixed(2);
+if(qrContainer){
 
-    const upi=
+    qrContainer.innerHTML = "";
 
-        `upi://pay?`+
+    const upi =
 
-        `pa=${encodeURIComponent(CONFIG.PAYMENT.UPI_ID)}`+
+`upi://pay?pa=${CONFIG.PAYMENT.UPI_ID}&pn=${CONFIG.PAYMENT.NAME}&am=${grandTotal().toFixed(2)}&cu=${CONFIG.PAYMENT.CURRENCY}&tn=${encodeURIComponent(CONFIG.PAYMENT.NOTE)}`;
 
-        `&pn=${encodeURIComponent(CONFIG.PAYMENT.NAME)}`+
+    new QRCode(qrContainer,{
 
-        `&am=${amount}`+
+        text:upi,
 
-        `&cu=${CONFIG.PAYMENT.CURRENCY}`+
+        width:220,
 
-        `&tn=${encodeURIComponent(CONFIG.PAYMENT.NOTE)}`;
+        height:220,
 
-    return
+        correctLevel:QRCode.CorrectLevel.H
 
-`https://quickchart.io/qr?size=320&text=${encodeURIComponent(upi)}`;
+    });
 
 }

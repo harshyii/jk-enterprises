@@ -245,16 +245,16 @@ export function subtotal(){
 
 
 /*==========================================================
- TOTAL MRP
+ MRP TOTAL
 ==========================================================*/
 
-export function totalMRP(){
+export function mrpTotal(){
 
     return APP.cart.reduce(
 
         (sum,item)=>
 
-        sum+(item.mrp*item.qty),
+        sum + (Number(item.mrp || item.price) * item.qty),
 
         0
 
@@ -262,16 +262,16 @@ export function totalMRP(){
 
 }
 
-
 /*==========================================================
  DISCOUNT
 ==========================================================*/
 
-export function totalDiscount(){
+export function discountTotal(){
 
-    return totalMRP()-subtotal();
+    return mrpTotal() - subtotal();
 
 }
+
 
 
 /*==========================================================
@@ -300,6 +300,7 @@ export function grandTotal(){
     return subtotal()+shipping();
 
 }
+
 
 
 /*==========================================================
@@ -361,23 +362,25 @@ export function orderItems(){
 
 export function orderPayload(customer){
 
-    return{
+return{
 
-        customer,
+    customer,
 
-        items:orderItems(),
+    items:orderItems(),
 
-        subtotal:subtotal(),
+    mrp:mrpTotal(),
 
-        shipping:shipping(),
+    subtotal:subtotal(),
 
-        discount:totalDiscount(),
+    discount:discountTotal(),
 
-        total:grandTotal(),
+    shipping:shipping(),
 
-        payment:"UPI"
+    total:grandTotal(),
 
-    };
+    payment:"UPI"
+
+};
 
 }
 

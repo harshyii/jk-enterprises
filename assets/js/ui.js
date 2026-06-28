@@ -12,6 +12,7 @@ import {
     latest,
     create,
     toast,
+    
     $
 } from "./utils.js";
 
@@ -20,9 +21,10 @@ import {
     addToCart,
     inCart,
     subtotal,
-    grandTotal,
+    mrpTotal,
+    discountTotal,
     shipping,
-    totalDiscount,
+    grandTotal,
     removeFromCart,
     updateQuantity,
     orderPayload,
@@ -1299,7 +1301,7 @@ Shopping Cart
 
 <span>Subtotal</span>
 
-<strong id="subTotal"></strong>
+<strong id="subtotal"></strong>
 
 </div>
 
@@ -1471,7 +1473,7 @@ class="btn btn-danger remove">
 
     });
 
-    $("#subTotal").textContent=
+    $("#subtotal").textContent=
 
     money(subtotal());
 
@@ -1568,19 +1570,64 @@ placeholder="Delivery Address">
 
 <div class="summary-card">
 
-<h5>Total</h5>
+<h5>Order Summary</h5>
 
-<h3>
+<div class="d-flex justify-content-between mb-2">
 
-${money(grandTotal())}
+    <span>Subtotal</span>
 
-</h3>
+    <span>${money(subtotal())}</span>
 
-<img
+</div>
 
-src="${CONFIG.PAYMENT.QR_IMAGE}"
+<div class="d-flex justify-content-between text-success mb-2">
 
-class="img-fluid my-3">
+    <span>Discount</span>
+
+    <span>- ${money(discountTotal())}</span>
+
+</div>
+
+<hr>
+
+<div class="d-flex justify-content-between">
+
+    <strong>Total</strong>
+
+    <strong>${money(grandTotal())}</strong>
+
+</div>
+
+<div class="text-center my-3">
+
+<div
+
+id="upiQR"
+
+class="d-inline-block rounded shadow p-2 bg-white">
+
+</div>
+
+</div>
+
+<div class="text-center mb-3">
+
+<small>
+
+UPI ID
+
+</small>
+
+<br>
+
+<strong>
+
+9050623210@sbi
+
+</strong>
+
+</div>
+
 
 <button
 
