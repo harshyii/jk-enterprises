@@ -1128,7 +1128,9 @@ class="product-grid">
 
 `;
 
+append(page);
 
+append(renderFooter());
     /*=========================================
       Gallery
     =========================================*/
@@ -1141,7 +1143,7 @@ class="product-grid">
 
         image.onclick=()=>{
 
-            $("#mainImage").src=image.src;
+            page.querySelector("#mainImage").src=image.src;
 
             page
 
@@ -1165,7 +1167,7 @@ class="product-grid">
       Cart
     =========================================*/
 
-    $("#buyButton").onclick=()=>{
+    page.querySelector("#buyButton").onclick=()=>{
 
         addToCart(item);
 
@@ -1179,7 +1181,7 @@ class="product-grid">
       Share
     =========================================*/
 
-    $("#shareButton").onclick=()=>{
+    page.querySelector("#shareButton").onclick=()=>{
 
         if(navigator.share){
 
@@ -1219,13 +1221,13 @@ class="product-grid">
 
     renderProducts(
 
-        related,
+    related,
 
-        $("#relatedProducts"),
+    page.querySelector("#relatedProducts"),
 
-        8
+    8
 
-    );
+);
 
 }
 
