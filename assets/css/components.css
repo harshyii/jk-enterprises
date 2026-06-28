@@ -606,3 +606,153 @@ position:relative;
 padding:0;
 
 }
+
+
+/*==========================================================
+HEADER V2
+==========================================================*/
+
+.navbar{
+
+    width:100%;
+
+    background:#fff;
+
+    padding:10px 0;
+
+}
+
+.navbar .container{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.logo{
+
+    flex:0 0 auto;
+
+    font-size:32px;
+
+    font-weight:800;
+
+    line-height:1;
+
+}
+
+.logo a{
+
+    color:#1f2937;
+
+    text-decoration:none;
+
+}
+
+.search{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.search input{
+
+    flex:1;
+
+    height:42px;
+
+    padding:0 14px;
+
+    border:1px solid #ddd;
+
+    border-right:none;
+
+    outline:none;
+
+    border-radius:8px 0 0 8px;
+
+}
+
+.search button{
+
+    width:46px;
+
+    height:42px;
+
+    border:1px solid #ddd;
+
+    border-left:none;
+
+    background:#fff;
+
+    border-radius:0 8px 8px 0;
+
+}
+
+.nav-actions{
+
+    flex:0 0 auto;
+
+}
+
+.cart-btn{
+
+    position:relative;
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    background:none;
+
+    font-size:28px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+}
+
+#cartBadge{
+
+    position:absolute;
+
+    top:-3px;
+
+    right:-5px;
+
+    min-width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#ff9800;
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+

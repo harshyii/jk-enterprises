@@ -90,124 +90,54 @@ export function renderHeader(){
 
     <div class="container">
 
-        <div class="header-top">
+        <div class="header-container">
 
-            <div class="logo">
+    <div class="logo">
 
-                <a href="./">
+        <a href="./">JK</a>
 
-                    JK Enterprises
+    </div>
 
-                </a>
+    <div class="search">
 
-            </div>
+        <input
+            id="searchInput"
+            type="search"
+            placeholder="Search products...">
 
-            <div class="nav-actions">
+        <button id="searchBtn">
 
-                <button
+            <i class="bi bi-search"></i>
 
-                    id="cartButton"
+        </button>
 
-                    class="cart-btn">
+    </div>
 
-                    <i class="bi bi-cart3"></i>
+    <div class="nav-actions">
 
-                    <span id="cartBadge">
+        <button
+            id="cartButton"
+            class="cart-btn">
 
-                        ${cartCount()}
+            <i class="bi bi-cart3"></i>
 
-                    </span>
+            <span id="cartBadge">
 
-                </button>
+                ${cartCount()}
 
-            </div>
+            </span>
 
-        </div>
+        </button>
 
-        <div class="header-search">
+    </div>
 
-            <div class="search">
-
-                <input
-
-                    id="searchInput"
-
-                    type="search"
-
-                    placeholder="Search products...">
-
-                <button id="searchBtn">
-
-                    <i class="bi bi-search"></i>
-
-                </button>
-
-            </div>
-
-        </div>
+</div>
 
     </div>
 
 </div>
 
 
-<div class="navbar">
-
-<div class="container">
-
-<div class="logo">
-
-<a href="./">
-
-JK Enterprises
-
-</a>
-
-</div>
-
-
-<div class="search">
-
-<input
-
-id="searchInput"
-
-type="search"
-
-placeholder="Search products...">
-
-<button id="searchBtn">
-
-<i class="bi bi-search"></i>
-
-</button>
-
-</div>
-
-
-<div class="nav-actions">
-
-<button
-
-id="cartButton"
-
-class="cart-btn">
-
-<i class="bi bi-cart3"></i>
-
-<span id="cartBadge">
-
-${cartCount()}
-
-</span>
-
-</button>
-
-</div>
-
-</div>
-
-</div>
 
 `;
 
