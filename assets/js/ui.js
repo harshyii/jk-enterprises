@@ -178,6 +178,8 @@ Professional Tools & Solar Solutions
 
 <p>
 
+<b>Welcome to JK Enterprises</br></b>
+
 Quality products at wholesale prices.
 
 </p>
