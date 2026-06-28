@@ -600,14 +600,26 @@ export function renderCard(item){
     ---------------------------------------*/
 
     template
-        .querySelector(".product-link")
-        .onclick = e=>{
+.querySelector(".product-link")
+.onclick=e=>{
 
-        e.preventDefault();
+    e.preventDefault();
 
-        product(item.ProductID);
+    product(item.ProductID);
 
-    };
+};
+
+template
+.querySelector(".product-view")
+.onclick=e=>{
+
+    e.preventDefault();
+
+    e.stopPropagation();
+
+    product(item.ProductID);
+
+};
 
     return template;
 

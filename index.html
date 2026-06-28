@@ -120,53 +120,59 @@
 
     <template id="productTemplate">
 
-        <article class="product-card">
+<article class="product-card">
 
-            <a class="product-link">
+    <div class="product-image">
 
-                <div class="product-image">
+        <img
+            loading="lazy"
+            decoding="async">
 
-                    <img
-                        loading="lazy"
-                        decoding="async">
+    </div>
 
-                </div>
+    <div class="product-body">
 
-                <div class="product-body">
+        <small class="brand"></small>
 
-                    <small class="brand"></small>
+        <a class="product-link">
 
-                    <h3 class="title"></h3>
+            <h3 class="title"></h3>
 
-                    <div class="price">
+        </a>
 
-                        <span class="sale"></span>
+        <div class="product-price">
 
-                        <span class="mrp"></span>
+            <span class="sale"></span>
 
-                    </div>
+            <span class="mrp"></span>
 
-                    <div class="discount"></div>
+            <span class="discount"></span>
 
-                </div>
+        </div>
 
-            </a>
+        <div class="product-actions">
 
-            <div class="product-actions">
+            <button class="btn btn-warning add-cart">
 
-                <button class="btn btn-warning add-cart">
+                <i class="bi bi-cart-plus"></i>
 
-                    <i class="bi bi-cart-plus"></i>
+                Add to Cart
 
-                    Add to Cart
+            </button>
 
-                </button>
+            <button class="btn btn-outline product-view">
 
-            </div>
+                View Details
 
-        </article>
+            </button>
 
-    </template>
+        </div>
+
+    </div>
+
+</article>
+
+</template>
 
     <!-- =========================================================
         CATEGORY TEMPLATE
