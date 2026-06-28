@@ -46,7 +46,7 @@ import {
 
 import {
 
-renderProductSchema
+updateProductSEO 
 
 }
 
@@ -890,7 +890,7 @@ export function renderSearch(keyword){
 export function renderProduct(id){
 
     const item = getProduct(id);
-    renderProductSchema(item);
+    updateProductSEO(item);
     if(!item){
 
         return render404();
