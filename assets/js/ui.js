@@ -86,7 +86,69 @@ export function renderHeader(){
 
     header.innerHTML=`
 
+<div class="navbar">
 
+    <div class="container">
+
+        <div class="header-top">
+
+            <div class="logo">
+
+                <a href="./">
+
+                    JK Enterprises
+
+                </a>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <button
+
+                    id="cartButton"
+
+                    class="cart-btn">
+
+                    <i class="bi bi-cart3"></i>
+
+                    <span id="cartBadge">
+
+                        ${cartCount()}
+
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="header-search">
+
+            <div class="search">
+
+                <input
+
+                    id="searchInput"
+
+                    type="search"
+
+                    placeholder="Search products...">
+
+                <button id="searchBtn">
+
+                    <i class="bi bi-search"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 
 <div class="navbar">

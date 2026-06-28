@@ -67,59 +67,58 @@ export function currentRoute(){
 
 export async function router(){
 
-    const route=currentRoute();
+    const route = currentRoute();
 
     switch(route){
 
         case "home":
-
-            return renderHome();
+            renderHome();
+            break;
 
         case "product":
-
-            return renderProduct(
-
-                param("id")
-
-            );
+            renderProduct(param("id"));
+            break;
 
         case "search":
-
-            return renderSearch(
-
-                param("search")
-
-            );
+            renderSearch(param("search"));
+            break;
 
         case "cart":
-
-            return renderCart();
+            renderCart();
+            break;
 
         case "checkout":
-
-            return renderCheckout();
+            renderCheckout();
+            break;
 
         case "contact":
-
-            return renderContact();
+            renderContact();
+            break;
 
         case "terms":
-
-            return renderTerms();
+            renderTerms();
+            break;
 
         case "returns":
-
-            return renderReturns();
+            renderReturns();
+            break;
 
         case "success":
-
-            return renderSuccess();
+            renderSuccess();
+            break;
 
         default:
-
-            return render404();
+            render404();
 
     }
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
 
 }
 
