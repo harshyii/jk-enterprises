@@ -639,3 +639,23 @@ font-size:26px;
 
 }
 
+.site-footer ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.site-footer li{
+    margin:.45rem 0;
+}
+
+.site-footer a{
+    color:#cfd3dc;
+    text-decoration:none;
+    transition:.2s;
+}
+
+.site-footer a:hover{
+    color:#fff;
+}
+

@@ -376,23 +376,33 @@ export function renderFooter(){
 
 <div class="col">
 
-<h4>
+<h5>
 
-JK Enterprises
+Categories
 
-</h4>
+</h5>
 
-<p>
+<ul>
 
-Solar Panels
+${APP.categories.map(category=>`
 
-Power Tools
+<li>
 
-Hand Tools
+<a href="#"
 
-Car Care Products
+data-category="${category}"
 
-</p>
+class="footer-category">
+
+${category}
+
+</a>
+
+</li>
+
+`).join("")}
+
+</ul>
 
 </div>
 
@@ -408,7 +418,17 @@ Quick Links
 
 <li>
 
-<a href="#contact">
+<a href="about.html">
+
+About
+
+</a>
+
+</li>
+
+<li>
+
+<a href="contact.html">
 
 Contact
 
@@ -418,7 +438,7 @@ Contact
 
 <li>
 
-<a href="#terms">
+<a href="terms.html">
 
 Terms
 
@@ -428,7 +448,7 @@ Terms
 
 <li>
 
-<a href="#returns">
+<a href="returns.html">
 
 Returns
 
@@ -460,7 +480,6 @@ JK Enterprises
 
 }
 
-
 /*==========================================================
  HOME
 ==========================================================*/
@@ -474,10 +493,6 @@ export function renderHome(){
         renderHeader(),
 
         renderHero(),
-
-        renderCategories(),
-
-        renderBrands(),
 
         section("Featured Products"),
 
