@@ -1,58 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <urlset
-xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
+    <url>
+        <loc>https://harshyii.github.io/jk-enterprises/</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 
-<loc>
+    <url>
+        <loc>https://harshyii.github.io/jk-enterprises/index.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 
-https://harshyii.github.io/jk-enterprises/
+    <url>
+        <loc>https://harshyii.github.io/jk-enterprises/about.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
-</loc>
+    <url>
+        <loc>https://harshyii.github.io/jk-enterprises/contact.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
-<priority>1.0</priority>
+    <url>
+        <loc>https://harshyii.github.io/jk-enterprises/cart.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
 
-</url>
-
-<url>
-
-<loc>
-
-https://harshyii.github.io/jk-enterprises/about.html
-
-</loc>
-
-</url>
-
-<url>
-
-<loc>
-
-https://harshyii.github.io/jk-enterprises/contact.html
-
-</loc>
-
-</url>
-
-<url>
-
-<loc>
-
-https://harshyii.github.io/jk-enterprises/terms.html
-
-</loc>
-
-</url>
-
-<url>
-
-<loc>
-
-https://harshyii.github.io/jk-enterprises/returns.html
-
-</loc>
-
-</url>
+    <url>
+        <loc>https://harshyii.github.io/jk-enterprises/product.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
 
 </urlset>
