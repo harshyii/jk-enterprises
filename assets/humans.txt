@@ -1,0 +1,23 @@
+/* TEAM */
+
+Company:
+JK Enterprises
+
+Website:
+https://harshyii.github.io/jk-enterprises/
+
+Developed with:
+
+HTML5
+Bootstrap 5
+JavaScript
+Google Apps Script
+Google Sheets API
+
+Powered by:
+
+GitHub Pages
+
+Country:
+
+India

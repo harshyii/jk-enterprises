@@ -1,0 +1,11 @@
+Contact: jkpehowa24@gmail.com
+
+Expires: 2029-01-01T00:00:00Z
+
+Preferred-Languages: en
+
+Canonical:
+https://harshyii.github.io/jk-enterprises/.well-known/security.txt
+
+Policy:
+https://harshyii.github.io/jk-enterprises/terms.html

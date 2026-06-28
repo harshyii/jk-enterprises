@@ -1,0 +1,6 @@
+User-agent: *
+
+Allow: /
+
+Sitemap:
+https://harshyii.github.io/jk-enterprises/sitemap.xml

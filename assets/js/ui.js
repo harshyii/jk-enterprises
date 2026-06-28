@@ -1529,17 +1529,37 @@ placeholder="Delivery Address">
 
 <div class="d-flex justify-content-between mb-2">
 
-    <span>Subtotal</span>
+    <span>MRP Total</span>
 
-    <span>${money(subtotal())}</span>
+    <span class="text-danger">
+
+        ${money(mrpTotal())}
+
+    </span>
 
 </div>
 
-<div class="d-flex justify-content-between text-success mb-2">
+<div class="d-flex justify-content-between mb-2">
 
-    <span>Discount</span>
+    <span>You Save</span>
 
-    <span>- ${money(discountTotal())}</span>
+    <span class="text-success">
+
+        - ${money(discountTotal())}
+
+    </span>
+
+</div>
+
+<div class="d-flex justify-content-between mb-2">
+
+    <span>Shipping</span>
+
+    <span>
+
+        ${shipping()===0?"FREE":money(shipping())}
+
+    </span>
 
 </div>
 
@@ -1547,13 +1567,15 @@ placeholder="Delivery Address">
 
 <div class="d-flex justify-content-between">
 
-    <strong>Total</strong>
+    <strong>Grand Total</strong>
 
-    <strong>${money(grandTotal())}</strong>
+    <strong class="text-primary">
+
+        ${money(grandTotal())}
+
+    </strong>
 
 </div>
-
-<div class="text-center my-3">
 
 <div
 

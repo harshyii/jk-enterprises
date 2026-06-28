@@ -1,0 +1,59 @@
+JK Enterprises
+
+Official Website
+
+Wholesale supplier of:
+
+• Power Tools
+• Industrial Equipment
+• Solar Products
+• Car Care Products
+• Hardware
+• Electrical Accessories
+
+Services
+
+• Wholesale Supply
+• Bulk Orders
+• Dealer Supply
+• Business Procurement
+
+Website
+
+https://harshyii.github.io/jk-enterprises/
+
+Important URLs
+
+Home
+/about.html
+/contact.html
+/terms.html
+/returns.html
+
+Product URLs
+
+/?id=PRODUCTID
+
+Robots
+
+/robots.txt
+
+Sitemap
+
+/sitemap.xml
+
+Primary Language
+
+English
+
+Country
+
+India
+
+Currency
+
+INR
+
+Business Type
+
+Wholesale Supplier
