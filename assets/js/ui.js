@@ -43,6 +43,16 @@ import {
     navigate
 } from "./router.js";
 
+
+import {
+
+renderProductSchema
+
+}
+
+from "./seo.js";
+
+
 /*==========================================================
  ROOT
 ==========================================================*/
@@ -880,7 +890,7 @@ export function renderSearch(keyword){
 export function renderProduct(id){
 
     const item = getProduct(id);
-
+    renderProductSchema(item);
     if(!item){
 
         return render404();
