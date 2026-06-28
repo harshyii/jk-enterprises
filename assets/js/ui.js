@@ -1470,6 +1470,7 @@ class="btn btn-danger remove">
     money(subtotal());
 
     $("#discount").textContent =
+    
     money(discountTotal());
 
     $("#shipping").textContent=
