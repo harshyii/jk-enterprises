@@ -536,8 +536,9 @@ export function renderCard(item){
     const image = template.querySelector("img");
 
     image.src =
-        item.Image1 ||
-        CONFIG.IMAGE.PLACEHOLDER;
+    item.Image1 ||
+    item.image ||
+    "./assets/images/no-image.svg";
 
     image.alt =
         item["Item Name"];
@@ -1149,15 +1150,6 @@ class="product-grid">
 
 `;
 
-    append(page);
-
-    append(
-
-        renderFooter()
-
-    );
-
-
 
     /*=========================================
       Gallery
@@ -1477,9 +1469,8 @@ class="btn btn-danger remove">
 
     money(subtotal());
 
-    $("#discount").textContent=
-
-    money(totalDiscount());
+    $("#discount").textContent =
+    money(discountTotal());
 
     $("#shipping").textContent=
 
@@ -1650,7 +1641,24 @@ Place Order
     append(page);
 
     append(renderFooter());
+const amount = grandTotal();
 
+const upi =
+`upi://pay?pa=9050623210@sbi&pn=JK%20Enterprises&am=${amount}&cu=INR`;
+
+const qr=document.getElementById("upiQR");
+
+if(qr){
+
+    qr.innerHTML="";
+
+    new QRCode(qr,{
+        text:upi,
+        width:220,
+        height:220
+    });
+
+}
     $("#checkoutForm")
 
     .onsubmit=async e=>{
@@ -1851,47 +1859,27 @@ export function bindSearchSuggestions() {
 
         box.innerHTML = "";
 
-        results.forEach(product => {
+        results.forEach(item=>{
 
-            const item = create(
+    const row=create("div","search-item");
 
-                "div",
+    row.innerHTML=`
+        <img src="${item.Image1}">
+        <div>
+            <strong>${item["Item Name"]}</strong>
+            <small>${money(item["Sale Price"])}</small>
+        </div>
+    `;
 
-                "search-item"
+    row.onclick=()=>{
 
-            );
+        navigate(`product&id=${item.ProductID}`);
 
-            item.innerHTML = `
+    };
 
-<img src="${product.Image1}">
+    box.append(row);
 
-<div>
-
-<strong>
-
-${product["Item Name"]}
-
-</strong>
-
-<small>
-
-${money(product["Sale Price"])}
-
-</small>
-
-</div>
-
-`;
-
-            item.onclick = () => {
-
-                product(product.ProductID);
-
-            };
-
-            box.append(item);
-
-        });
+});
 
     };
 
@@ -1931,13 +1919,13 @@ JK Enterprises
 
 <p>
 
-Panipat, Haryana
+Pehowa, Haryana
 
 </p>
 
 <p>
 
-Phone :
+Phone : 9050623210
 
 ${CONFIG.COMPANY.PHONE}
 
@@ -1945,7 +1933,7 @@ ${CONFIG.COMPANY.PHONE}
 
 <p>
 
-Email :
+Email : jkpehowa24@gmail.com
 
 ${CONFIG.COMPANY.EMAIL}
 
@@ -1953,7 +1941,7 @@ ${CONFIG.COMPANY.EMAIL}
 
 <p>
 
-WhatsApp :
+WhatsApp : 9050623210
 
 ${CONFIG.COMPANY.WHATSAPP}
 
@@ -1968,9 +1956,7 @@ ${CONFIG.COMPANY.WHATSAPP}
     append(page);
 
     append(renderFooter());
-
 }
-
 /*==========================================================
  TERMS
 ==========================================================*/
@@ -2032,7 +2018,13 @@ Warranty depends on manufacturer.
     append(page);
 
     append(renderFooter());
+const qr=document.getElementById("upiQR");
 
+new QRCode(qr,{
+    text:`upi://pay?pa=9050623210@sbi&pn=JK%20Enterprises&am=${grandTotal()}&cu=INR`,
+    width:220,
+    height:220
+});
 }
 
 /*==========================================================

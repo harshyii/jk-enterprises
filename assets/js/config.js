@@ -138,7 +138,7 @@ export const CONFIG = Object.freeze({
     IMAGE:{
 
         PLACEHOLDER:
-        "assets/images/no-image.webp",
+        "assets/images/no-image.svg",
 
         HERO:
         "assets/images/hero.webp"
