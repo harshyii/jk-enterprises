@@ -624,23 +624,23 @@ HEADER V2
 
 .navbar .container{
 
-    display:flex;
+    max-width:var(--container-max);
 
-    align-items:center;
+margin:auto;
 
-    gap:12px;
+padding-inline:var(--container-padding);
 
 }
 
 .logo{
 
-    flex:0 0 auto;
+    flex:0 0 70px;
 
-    font-size:32px;
+    min-width:70px;
+
+    font-size:20px;
 
     font-weight:800;
-
-    line-height:1;
 
 }
 
@@ -654,11 +654,17 @@ HEADER V2
 
 .search{
 
-    flex:1;
-
     display:flex;
 
     align-items:center;
+
+    flex:1 1 auto;
+
+    width:auto;
+
+    min-width:0;
+
+    margin:0 12px;
 
 }
 
@@ -666,39 +672,33 @@ HEADER V2
 
     flex:1;
 
-    height:42px;
+    width:100%;
 
-    padding:0 14px;
+    min-width:0;
 
-    border:1px solid #ddd;
+    height:44px;
 
     border-right:none;
-
-    outline:none;
-
-    border-radius:8px 0 0 8px;
 
 }
 
 .search button{
 
-    width:46px;
+    width:42px;
 
-    height:42px;
+    min-width:42px;
 
-    border:1px solid #ddd;
+    height:44px;
 
-    border-left:none;
-
-    background:#fff;
-
-    border-radius:0 8px 8px 0;
+    padding:0;
 
 }
 
 .nav-actions{
 
     flex:0 0 auto;
+
+    margin-left:auto;
 
 }
 
@@ -720,7 +720,7 @@ HEADER V2
 
     justify-content:center;
 
-    align-items:center;
+    align-items:flex-end;
 
     cursor:pointer;
 
