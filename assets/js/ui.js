@@ -1299,13 +1299,6 @@ Shopping Cart
 
 <hr>
 
-<div class="d-flex justify-content-between">
-
-<h5>Total</h5>
-
-<h5 id="grandTotal"></h5>
-
-</div>
 
 <button
 
@@ -1449,21 +1442,7 @@ class="btn btn-danger remove">
 
     });
 
-    $("#subtotal").textContent=
-
-    money(subtotal());
-
-    $("#discount").textContent =
     
-    money(discountTotal());
-
-    $("#shipping").textContent=
-
-    money(shipping());
-
-    $("#grandTotal").textContent=
-
-    money(grandTotal());
 
     $("#checkoutBtn").onclick=()=>{
 
