@@ -381,7 +381,7 @@ Quick Links
 
 <li>
 
-<a href="about.html">
+<a href="#about">
 
 About
 
@@ -391,7 +391,7 @@ About
 
 <li>
 
-<a href="contact.html">
+<a href="#contact">
 
 Contact
 
@@ -401,7 +401,7 @@ Contact
 
 <li>
 
-<a href="terms.html">
+<a href="#terms">
 
 Terms
 
@@ -411,7 +411,7 @@ Terms
 
 <li>
 
-<a href="returns.html">
+<a href="#returns">
 
 Returns
 
