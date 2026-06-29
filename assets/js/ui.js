@@ -160,26 +160,6 @@ export function renderHeader(){
  HERO
 ==========================================================*/
 
-export function renderHero(){
-
-    const hero=create("section","hero");
-
-    hero.innerHTML=`
-
-<div class="container">
-
-<div class="hero-content">
-
-
-</div>
-
-</div>
-
-`;
-
-    return hero;
-
-}
 
 
 /*==========================================================
@@ -475,15 +455,10 @@ export function renderHome(){
 
         renderHeader(),
 
-        renderHero(),
 
         section("Featured Products"),
 
         create("section","featured-products"),
-
-        section("Latest Products"),
-
-        create("section","latest-products"),
 
         renderFooter()
 
