@@ -170,25 +170,6 @@ export function renderHero(){
 
 <div class="hero-content">
 
-<h1>
-
-Professional Tools & Solar Solutions
-
-</h1>
-
-<p>
-
-<b>Welcome to JK Enterprises</br></b>
-
-Quality products at wholesale prices.
-
-</p>
-
-<button id="heroShop">
-
-Shop Now
-
-</button>
 
 </div>
 
