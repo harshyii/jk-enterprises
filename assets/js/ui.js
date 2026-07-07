@@ -604,7 +604,7 @@ productBadge(product){
 
     let html="";
 
-    if(product.discount>0)
+    if(Number(product.discount||0)>0){
 
         html+=this.badge(
 
@@ -614,7 +614,9 @@ productBadge(product){
 
         );
 
-    if(product.featured)
+    }
+
+    if(product.featured){
 
         html+=this.badge(
 
@@ -624,7 +626,9 @@ productBadge(product){
 
         );
 
-    if(product.new)
+    }
+
+    if(product.new){
 
         html+=this.badge(
 
@@ -634,50 +638,55 @@ productBadge(product){
 
         );
 
+    }
+
     return html;
 
 },
+
+
+
 /*==========================================================
  Product Price
 ==========================================================*/
 
 productPrice(product){
 
-const mrp=Number(product.mrp||0);
+    const mrp=Number(product.mrp||0);
 
-const sale=Number(product.price||product.price||0);
+    const sale=Number(product.price||0);
 
-const discount=Number(product.discount||0);
+    const discount=Number(product.discount||0);
 
-return`
+    return `
 
 <div class="product-price">
 
-<span class="sale-price">
+    <span class="sale-price">
 
-${Utils.price(sale)}
+        ${Utils.price(sale)}
 
-</span>
+    </span>
 
-${mrp>sale?`
+    ${mrp>sale?`
 
-<span class="mrp">
+    <span class="mrp">
 
-${Utils.price(mrp)}
+        ${Utils.price(mrp)}
 
-</span>
+    </span>
 
-`:""}
+    `:""}
 
-${discount>0?`
+    ${discount>0?`
 
-<span class="discount">
+    <span class="discount">
 
-${discount}% OFF
+        ${discount}% OFF
 
-</span>
+    </span>
 
-`:""}
+    `:""}
 
 </div>
 
@@ -693,23 +702,23 @@ ${discount}% OFF
 
 productImage(product){
 
-return`
+    return `
 
 <div class="product-image">
 
-<img
+    <img
 
-src="${product.image||CONFIG.IMAGES.PRODUCT}"
+        src="${product.image || CONFIG.IMAGES.PRODUCT}"
 
-alt="${product.name}"
+        alt="${Utils.escape(product.name||'Product')}"
 
-loading="lazy"
+        loading="lazy"
 
-width="300"
+        width="300"
 
-height="300"
+        height="300"
 
-onerror="this.src='${CONFIG.IMAGES.PRODUCT}'">
+        onerror="this.src='${CONFIG.IMAGES.PRODUCT}'">
 
 </div>
 
@@ -725,53 +734,45 @@ onerror="this.src='${CONFIG.IMAGES.PRODUCT}'">
 
 productCard(product){
 
-return`
+    return `
 
 <article
-
 class="card product-card"
-
 data-product="${product.id}">
 
 <a
-
 href="product.html?id=${product.id}"
-
 class="text-decoration-none text-dark">
 
 ${this.productImage(product)}
 
 <div class="card-body">
 
-<div class="mb-2">
+    <div class="mb-2">
 
-${this.productBadge(product)}
+        ${this.productBadge(product)}
 
-</div>
+    </div>
 
-<div class="product-Brand">
+    <div class="product-brand">
 
-${item.brand||""}
+        ${Utils.escape(product.brand||"")}
 
-</div>
+    </div>
 
-<h3 class="product-title">
+    <h3 class="product-title">
 
-${Utils.escape(product.name)}
+        ${Utils.escape(product.name||"")}
 
-</h3>
+    </h3>
 
-<div class="product-stock">
+    <div class="product-stock">
 
-${this.stock(
+        ${this.stock(Number(product.stock||0))}
 
-Number(product.stock||1)
+    </div>
 
-)}
-
-</div>
-
-${this.productPrice(product)}
+    ${this.productPrice(product)}
 
 </div>
 
@@ -779,29 +780,27 @@ ${this.productPrice(product)}
 
 <div class="card-footer">
 
-<div class="d-grid gap-2">
+    <div class="d-grid gap-2">
 
-<button
+        <button
+        type="button"
+        class="btn btn-primary"
+        data-cart-add="${product.id}">
 
-class="btn btn-primary"
+            Add to Cart
 
-data-cart-add="${product.id}">
+        </button>
 
-Add to Cart
+        <button
+        type="button"
+        class="btn btn-outline"
+        data-product-view="${product.id}">
 
-</button>
+        View Details
 
-<button
+    </button>
 
-class="btn btn-outline"
-
-data-product-view="${product.id}">
-
-View Details
-
-</button>
-
-</div>
+    </div>
 
 </div>
 
@@ -819,11 +818,9 @@ View Details
 
 productGrid(products=[]){
 
-if(!products.length)
+    if(!products.length) return "";
 
-return"";
-
-return`
+    return `
 
 <div class="row g-4">
 
@@ -851,24 +848,22 @@ ${this.productCard(product)}
 
 productGallery(images=[]){
 
-if(!images.length)
+    if(!images.length){
 
-images=[CONFIG.IMAGES.PRODUCT];
+        images=[CONFIG.IMAGES.PRODUCT];
 
-return`
+    }
+
+    return `
 
 <div class="product-gallery">
 
 <div class="product-main-image">
 
 <img
-
 id="productImage"
-
 src="${images[0]}"
-
 alt="Product Image"
-
 loading="eager">
 
 </div>
@@ -878,15 +873,10 @@ loading="eager">
 ${images.map(image=>`
 
 <img
-
 class="product-thumbnail"
-
 src="${image}"
-
 data-image="${image}"
-
 loading="lazy"
-
 alt="Thumbnail">
 
 `).join("")}
@@ -898,8 +888,6 @@ alt="Thumbnail">
 `;
 
 },
-
-
 
 /*==========================================================
  Quantity Selector
@@ -1017,7 +1005,7 @@ Brand:
 
 </strong>
 
-${item.brand||"-"}
+${product.brand||"-"}
 
 </div>
 
@@ -1052,7 +1040,7 @@ const specs=[
 
 ["SKU",product.sku],
 
-["Brand",item.brand],
+["Brand",product.brand],
 
 ["Category",product.category],
 
@@ -1348,7 +1336,7 @@ ${this.productGallery(images)}
 
 <div class="product-Brand">
 
-${item.brand||""}
+${product.brand||""}
 
 </div>
 

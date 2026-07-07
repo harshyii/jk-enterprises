@@ -42,6 +42,7 @@ const App = {
 
             // Initialize cart globally
             Cart.init();
+        Cart.render();
 
             // Load current page
             await this.page();
@@ -140,6 +141,7 @@ const App = {
             if(typeof Cart.init==="function")
 
                 await Cart.init();
+        Cart.render();
 
             return;
 
