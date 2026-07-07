@@ -18,61 +18,39 @@ const STATIC_CACHE=`${CACHE_VERSION}-static`;
 const DYNAMIC_CACHE=`${CACHE_VERSION}-dynamic`;
 
 
-/*==========================================================
- Static Files
-==========================================================*/
+const BASE="/jk-enterprises";
 
 const STATIC_FILES=[
 
-"/",
+BASE + "/",
+BASE + "/index.html",
+BASE + "/about.html",
+BASE + "/contact.html",
+BASE + "/products.html",
+BASE + "/product.html",
+BASE + "/brands.html",
+BASE + "/brand.html",
+BASE + "/blogs.html",
+BASE + "/blog.html",
+BASE + "/cart.html",
+BASE + "/checkout.html",
+BASE + "/search.html",
+BASE + "/faq.html",
+BASE + "/privacy.html",
+BASE + "/returns.html",
+BASE + "/shipping.html",
+BASE + "/terms.html",
+BASE + "/404.html",
 
-"/index.html",
+BASE + "/assets/css/app.css",
 
-"/about.html",
+BASE + "/assets/js/app.js",
 
-"/contact.html",
+BASE + "/assets/images/icons/logo.svg",
 
-"/products.html",
-
-"/product.html",
-
-"/brands.html",
-
-"/brand.html",
-
-"/blogs.html",
-
-"/blog.html",
-
-"/cart.html",
-
-"/checkout.html",
-
-"/search.html",
-
-"/faq.html",
-
-"/privacy.html",
-
-"/returns.html",
-
-"/shipping.html",
-
-"/terms.html",
-
-"/404.html",
-
-"/assets/css/app.css",
-
-"/assets/js/app.js",
-
-"/assets/images/icons/logo.svg",
-
-"/manifest.json"
+BASE + "/manifest.json"
 
 ];
-
-
 /*==========================================================
  Install
 ==========================================================*/
