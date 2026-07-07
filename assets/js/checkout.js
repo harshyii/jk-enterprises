@@ -26,8 +26,9 @@ init(){
 
     this.summary();
 
-    this.bind();
+    this.generateQR();
 
+    this.bind();
 },
 
 
@@ -92,15 +93,13 @@ item.price*item.quantity
 
 
 
-    if(total)
+    if(total){
 
-        total.textContent=
+    total.textContent = Utils.price(Cart.total());
 
-        Utils.price(
+    this.generateQR();
 
-            Cart.total()
-
-        );
+}
 
 },
 
@@ -404,10 +403,8 @@ async submit(e){
 
 
 
-    window.location=
-
-    `checkout.html?success=${response.orderId}`;
-
+    window.location =
+    `success.html?order=${response.orderId}`;
 },
 
 /*==========================================================
@@ -416,51 +413,52 @@ async submit(e){
 
 success(){
 
-    const id=
+    const id = new URLSearchParams(location.search).get("success");
 
-    new URLSearchParams(
+    if(!id) return;
 
-        location.search
+    document
+        .getElementById("checkoutSuccess")
+        ?.removeAttribute("hidden");
 
-    ).get("success");
+    const order = document.getElementById("orderNumber");
 
+    if(order)
+        order.textContent = id;
 
+},
 
-    if(!id)
+/*==========================================================
+ UPI QR
+==========================================================*/
+
+generateQR(){
+
+    if(typeof QRCode==="undefined"){
+
+        console.error("QRCode library missing");
 
         return;
 
+    }
+
+    const amount = Number(Cart.total()).toFixed(2);
+
+    const upi =
+`upi://pay?pa=9050623210@sbi&pn=JK Enterprises&am=${amount}&cu=INR&tn=Order`;
 
 
-    document
+    console.log(upi);
 
-    .getElementById(
+    const qr = document.getElementById("upiQR");
 
-        "checkoutSuccess"
+    qr.innerHTML="";
 
-    )
-
-    ?.removeAttribute(
-
-        "hidden"
-
-    );
-
-
-
-    const order=
-
-    document.getElementById(
-
-        "orderNumber"
-
-    );
-
-
-
-    if(order)
-
-        order.textContent=id;
+    new QRCode(qr,{
+        text: upi,
+        width:250,
+        height:250
+    });
 
 }
 

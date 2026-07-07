@@ -309,12 +309,10 @@ Scan & Pay
 
 </h5>
 
-<img
+<div
 id="upiQR"
-src=""
-width="250"
-height="250"
-class="img-fluid border rounded">
+class="text-center">
+</div>
 
 <p
 class="mt-3">
@@ -339,7 +337,8 @@ hidden>
 
 <div class="alert alert-warning">
 
-Cash will be collected on delivery.
+Save 5% on your order by paying via UPI or Bank Transfer.<br>
+Cash will be collected on delivery with additional 5% charge.
 
 </div>
 
@@ -351,7 +350,11 @@ hidden>
 
 <div class="alert alert-info">
 
-Bank Details Here
+State Bank of India<br>
+Name: Jk enterprises<br>
+Account Number: 43494979490<br>
+IFSC: SBIN0050098<br>
+
 
 </div>
 
@@ -677,25 +680,9 @@ Designed & Developed by JK Enterprises.
 <script
 src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
 
-<script
-type="module"
-src="assets/js/app.js"></script>
+<script src="assets/vendor/qrcode/qrcode.min.js"></script>
+<script type="module" src="assets/js/app.js"></script>
 
-<script>
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-const total=document.getElementById("checkoutTotal").innerText.replace(/[₹,]/g,"");
-
-const upi=`upi://pay?pa=9050623210@sbi&pn=JK Enterprises&am=${total}&cu=INR`;
-
-document.getElementById("upiQR").src=
-
-"https://quickchart.io/qr?size=300&text="+encodeURIComponent(upi);
-
-});
-
-</script>
 
 </body>
 

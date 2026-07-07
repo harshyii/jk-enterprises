@@ -126,6 +126,8 @@ class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-
 
 </header>
 
+========================================================== -->
+
 
 
 <!-- ==========================================================
@@ -403,25 +405,7 @@ Proceed to Checkout
 
 
 </button>
-const checkoutBtn = e.target.closest("#checkoutButton");
 
-if (checkoutBtn) {
-
-    e.preventDefault();
-
-    if (!this.items.length) {
-
-        UI.toast("Your cart is empty");
-
-        return;
-
-    }
-
-    window.location.href = "checkout.html";
-
-    return;
-
-}
 
 <a
 href="products.html"
