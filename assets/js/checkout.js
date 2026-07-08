@@ -9,6 +9,8 @@
 
 import API from "./api.js";
 import Cart from "./cart.js";
+
+
 import Utils from "./utils.js";
 import UI from "./ui.js";
 
@@ -21,16 +23,19 @@ const Checkout={
 init(){
 
     if(!document.getElementById("checkoutForm"))
-
         return;
 
     this.summary();
 
+    this.payment();
+
     this.generateQR();
 
     this.bind();
-},
 
+    this.updatePaymentOffer();
+
+},
 
 
 /*==========================================================
@@ -252,7 +257,7 @@ data(form){
             phone:
 
             fd.get("phone"),
-
+            
             email:
 
             fd.get("email")
@@ -341,8 +346,11 @@ async submit(e){
 
 
 
-    button.disabled=true;
+    if(this.processing)
+    return;
 
+        this.processing=true;
+    this.processing = false;
     button.textContent=
 
     "Placing Order...";
@@ -459,6 +467,28 @@ generateQR(){
         width:250,
         height:250
     });
+
+},
+
+updatePaymentOffer(){
+
+    const total = Cart.total();
+
+    const cod = total * 1.05;
+
+    const savings = cod - total;
+
+    document.getElementById("offerTotal").textContent =
+        Utils.price(total);
+
+    document.getElementById("offerOnline").textContent =
+        Utils.price(total);
+
+    document.getElementById("offerCOD").textContent =
+        Utils.price(cod);
+
+    document.getElementById("offerSavings").textContent =
+        Utils.price(savings);
 
 }
 

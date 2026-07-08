@@ -40,7 +40,7 @@ const CONFIG = Object.freeze({
 
     API: {
 
-        BASE_URL: "https://script.google.com/macros/s/AKfycbxyEs1psoswvjTCXTPmxolY_d5od6OWdigmyvMMfyQbfDbO2ef_TEjW1WDczQSjK1mE/exec",
+        BASE_URL: "https://script.google.com/macros/s/AKfycbwlyWd9ZR0_QFM-KgsKJnb0_9Y4LQX6MNtT9vi55cPxSNU-PKAkWbwtwzK40VjR9gj7/exec",
 
         TIMEOUT: 15000
 
@@ -53,6 +53,8 @@ const CONFIG = Object.freeze({
     ======================================================*/
 
     ACTIONS: {
+
+        HOMEPAGE:"homepage",
 
         PRODUCTS: "products",
 
@@ -152,7 +154,7 @@ const CONFIG = Object.freeze({
 
         PHONE: "+919050623210",
 
-        ADDRESS: "Kurukshetra, Haryana, India"
+        ADDRESS: "Pehowa, Kurukshetra, Haryana, India"
 
     },
 
@@ -256,9 +258,17 @@ const CONFIG = Object.freeze({
 
         SETTINGS: 3600
 
-    }
+    },
 
+    /*======================================================
+     Homepage
+    ======================================================*/
+
+    HOME_SHEET: "Home"
+    
 });
+
+
 
 
 
@@ -267,3 +277,4 @@ const CONFIG = Object.freeze({
 ==========================================================*/
 
 export default CONFIG;
+

@@ -46,7 +46,7 @@ const API = {
 
                     method:"GET",
 
-                    cache:"no-store"
+                    cache:"force-cache"
 
                 }
 
@@ -225,74 +225,72 @@ const API = {
 
 
     /*======================================================
-     Order Submit
-    ======================================================*/
+ Order Submit
+======================================================*/
 
-    async order(data={}){
+async order(data={}){
 
-        try{
+    try{
 
-            const response=await fetch(
+        const response = await fetch(
 
-                CONFIG.API.BASE_URL,
+            CONFIG.API.BASE_URL,
 
-                {
+            {
 
-                    method:"POST",
+                method:"POST",
 
-                    headers:{
+                headers:{
 
-                        "Content-Type":"application/json"
+                    "Content-Type":"application/json"
 
-                    },
+                },
 
-                    body:JSON.stringify({
+                body:JSON.stringify({
 
-                        action:CONFIG.ACTIONS.ORDER,
+                    action:CONFIG.ACTIONS.ORDER,
 
-                        data
+                    order:data
 
-                    })
+                })
 
-                }
+            }
 
-            );
+        );
 
-            if(!response.ok)
+        if(!response.ok)
 
-                throw new Error(
+            throw new Error(
 
-                    `HTTP ${response.status}`
-
-                );
-
-            return await response.json();
-
-        }
-
-        catch(error){
-
-            console.error(
-
-                "[ORDER]",
-
-                error
+                `HTTP ${response.status}`
 
             );
 
-            return{
+        return await response.json();
 
-                success:false,
+    }
 
-                message:error.message
+    catch(error){
 
-            };
+        console.error(
 
-        }
+            "[ORDER]",
 
-    },
+            error
 
+        );
 
+        return{
+
+            success:false,
+
+            message:error.message
+
+        };
+
+    }
+
+},
 
     /*======================================================
      Ping
@@ -301,6 +299,20 @@ const API = {
     ping(){
 
         return this.request("ping");
+
+    },
+    
+    /*======================================================
+    Homepage
+    ======================================================*/
+
+    homepage(){
+
+        return this.request(
+
+            "homepage"
+
+        );
 
     }
 

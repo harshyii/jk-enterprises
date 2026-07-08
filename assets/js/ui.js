@@ -732,84 +732,85 @@ productImage(product){
  Product Card
 ==========================================================*/
 
+/*==========================================================
+ Product Card
+==========================================================*/
+
 productCard(product){
 
-    return `
+return `
 
-<article
-class="card product-card"
-data-product="${product.id}">
+<div class="col-6 col-md-4 col-lg-3">
+
+<div class="card product-card h-100">
 
 <a
 href="product.html?id=${product.id}"
 class="text-decoration-none text-dark">
 
-${this.productImage(product)}
+<img
+
+src="${product.image||'assets/images/no-image.webp'}"
+
+class="card-img-top"
+
+alt="${product.name}"
+
+loading="lazy">
 
 <div class="card-body">
 
-    <div class="mb-2">
+<div class="small text-muted">
 
-        ${this.productBadge(product)}
+${product.brand||""}
 
-    </div>
+</div>
 
-    <div class="product-brand">
+<h6 class="card-title">
 
-        ${Utils.escape(product.brand||"")}
+${product.name}
 
-    </div>
+</h6>
 
-    <h3 class="product-title">
+<div class="fw-bold text-primary">
 
-        ${Utils.escape(product.name||"")}
+${Utils.price(product.price)}
 
-    </h3>
+</div>
 
-    <div class="product-stock">
+${product.mrp?
 
-        ${this.stock(Number(product.stock||0))}
+`<small class="text-decoration-line-through text-muted">
 
-    </div>
+${Utils.price(product.mrp)}
 
-    ${this.productPrice(product)}
+</small>`
+
+:""}
 
 </div>
 
 </a>
 
-<div class="card-footer">
+<div class="card-footer bg-white border-0">
 
-    <div class="d-grid gap-2">
+<button
+class="btn btn-primary w-100"
+data-cart-add="${product.id}">
 
-        <button
-        type="button"
-        class="btn btn-primary"
-        data-cart-add="${product.id}">
+Add to Cart
 
-            Add to Cart
-
-        </button>
-
-        <button
-        type="button"
-        class="btn btn-outline"
-        data-product-view="${product.id}">
-
-        View Details
-
-    </button>
-
-    </div>
+</button>
 
 </div>
 
-</article>
+</div>
+
+</div>
 
 `;
 
 },
-
 
 
 /*==========================================================
@@ -1485,56 +1486,61 @@ onerror="this.src='${CONFIG.IMAGES.BLOG}'">
  Blog Card
 ==========================================================*/
 
+/*==========================================================
+ Blog Card
+==========================================================*/
+
 blogCard(blog){
 
 return`
 
-<article
+<div class="col-md-4">
 
-class="card blog-card"
+<div class="card h-100">
 
-data-blog="${blog.id}">
+<img
 
-<a
+src="${blog.image||'assets/images/blog.webp'}"
 
-href="blog.html?id=${blog.id}"
+class="card-img-top"
 
-class="text-decoration-none text-dark">
+loading="lazy"
 
-${this.blogImage(blog)}
+alt="${blog.title}">
 
 <div class="card-body">
 
-<div class="blog-category">
+<h5>
 
-${blog.category||"Blog"}
+${blog.title}
 
-</div>
+</h5>
 
-<h3 class="blog-title">
+<p>
 
-${Utils.escape(blog.title)}
-
-</h3>
-
-${this.blogMeta(blog)}
-
-<p class="blog-description">
-
-${blog.summary||""}
+${blog.excerpt||""}
 
 </p>
 
-</div>
+<a
+
+href="blog.html?id=${blog.slug}"
+
+class="btn btn-outline-primary">
+
+Read More
 
 </a>
 
-</article>
+</div>
+
+</div>
+
+</div>
 
 `;
 
 },
-
 
 
 /*==========================================================
@@ -1812,50 +1818,55 @@ onerror="this.src='${CONFIG.IMAGES.Brand}'">
  Brand Card
 ==========================================================*/
 
-brandCard(Brand){
+/*==========================================================
+ Brand Card
+==========================================================*/
+
+brandCard(brand){
 
 return`
 
-<article
-
-class="card Brand-card"
-
-data-Brand="${Brand.id}"
-
-data-name="${Brand.name||""}">
+<div class="col-6 col-md-3 col-lg-2">
 
 <a
 
-href="Brand.html?id=${Brand.id}"
+href="products.html?brand=${encodeURIComponent(brand.name)}"
 
-class="text-decoration-none text-dark">
+class="text-decoration-none">
 
-${this.brandLogo(Brand)}
+<div class="card h-100 text-center">
 
 <div class="card-body">
 
-<h3 class="Brand-title">
+<img
 
-${Utils.escape(Brand.name)}
+src="${brand.logo||'assets/images/brand.webp'}"
 
-</h3>
+class="img-fluid mb-3"
 
-<p class="Brand-description">
+loading="lazy"
 
-${Brand.description||""}
+style="max-height:70px"
 
-</p>
+alt="${brand.name}">
+
+<h6>
+
+${brand.name}
+
+</h6>
+
+</div>
 
 </div>
 
 </a>
 
-</article>
+</div>
 
 `;
 
 },
-
 
 
 /*==========================================================
