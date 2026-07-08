@@ -232,26 +232,25 @@ total(){
 
 updateCount(){
 
+    const count = this.count();
+
     document
+        .querySelectorAll("[data-cart-count]")
+        .forEach(el => {
+            el.textContent = count;
+        });
 
-    .querySelectorAll(
+    const desktop = document.getElementById("cartCount");
+    if (desktop) {
+        desktop.textContent = count;
+    }
 
-        "[data-cart-count]"
-
-    )
-
-    .forEach(el=>{
-
-        el.textContent=
-
-        this.count();
-
-    });
+    const mobile = document.getElementById("cartCountMobile");
+    if (mobile) {
+        mobile.textContent = count;
+    }
 
 },
-
-
-
 
 /*==========================================================
  Render Cart Page

@@ -122,3 +122,43 @@ outline-offset:2px;
 display:none!important;
 
 }
+
+/* ==========================================================
+MOBILE CART BAR
+========================================================== */
+
+.mobile-cart-bar{
+
+display:none;
+
+}
+
+@media (max-width:991.98px){
+
+.mobile-cart-bar{
+
+display:block;
+
+background:#fff;
+
+padding:10px 0;
+
+border-bottom:1px solid #e9ecef;
+
+position:sticky;
+
+top:72px;
+
+z-index:1020;
+
+}
+
+.mobile-cart-bar .btn{
+
+height:46px;
+
+font-weight:600;
+
+}
+
+}

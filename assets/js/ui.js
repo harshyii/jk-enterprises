@@ -1615,6 +1615,39 @@ ${this.blogMeta(blog)}
 ${this.blogImage(blog)}
 
 </header>
+<!-- ==========================================================
+MOBILE CART BAR
+========================================================== -->
+
+<div class="mobile-cart-bar d-lg-none">
+
+<div class="container">
+
+<a
+href="cart.html"
+class="btn btn-primary w-100 d-flex justify-content-between align-items-center">
+
+<div>
+
+<i class="bi bi-cart3 me-2"></i>
+
+Cart
+
+</div>
+
+<span
+id="cartCountMobile"
+class="badge bg-light text-dark">
+
+0
+
+</span>
+
+</a>
+
+</div>
+
+</div>
 
 `;
 
@@ -2371,6 +2404,39 @@ aria-label="Menu">
 </div>
 
 </header>
+<!-- ==========================================================
+MOBILE CART BAR
+========================================================== -->
+
+<div class="mobile-cart-bar d-lg-none">
+
+<div class="container">
+
+<a
+href="cart.html"
+class="btn btn-primary w-100 d-flex justify-content-between align-items-center">
+
+<div>
+
+<i class="bi bi-cart3 me-2"></i>
+
+Cart
+
+</div>
+
+<span
+id="cartCountMobile"
+class="badge bg-light text-dark">
+
+0
+
+</span>
+
+</a>
+
+</div>
+
+</div>
 
 `;
 
