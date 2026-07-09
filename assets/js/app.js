@@ -242,6 +242,56 @@ if("serviceWorker" in navigator){
 
     });
 
+    /*======================================================
+ Auto Close Mobile Menu
+======================================================*/
+
+document.addEventListener("click",(e)=>{
+
+    const nav = document.getElementById("mainNav");
+
+    const button = document.querySelector(".navbar-toggler");
+
+    if(
+        !nav ||
+        !button ||
+        !nav.classList.contains("show")
+    ) return;
+
+    if(
+        nav.contains(e.target) ||
+        button.contains(e.target)
+    ) return;
+
+    bootstrap.Collapse
+        .getOrCreateInstance(nav)
+        .hide();
+
+});
+
+document
+.querySelectorAll("#mainNav .nav-link")
+.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        const nav = document.getElementById("mainNav");
+
+        if(
+            nav &&
+            nav.classList.contains("show")
+        ){
+
+            bootstrap.Collapse
+                .getOrCreateInstance(nav)
+                .hide();
+
+        }
+
+    });
+
+});
+
 }
 
 

@@ -92,15 +92,27 @@ async catalog(){
 
     grid.innerHTML=
 
-    response.data
+response.data
 
-    .map(
+.map(
 
-        p=>UI.productCard(p)
+    p=>UI.productCard(p)
 
-    )
+)
 
-    .join("");
+.join("");
+
+/*==========================================================
+Product Count
+==========================================================*/
+
+const count = document.getElementById("productCount");
+
+if(count){
+
+    count.textContent = response.total ?? response.data.length;
+
+}
 
 },
 
@@ -389,6 +401,8 @@ async related(id){
     .join("");
 
 },
+
+
 
 /*==========================================================
  Search Helper
