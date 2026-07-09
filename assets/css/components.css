@@ -518,4 +518,93 @@ background-position:-100% 0;
 
 }
 
+
+}
+
+/*==========================================================
+FAQ
+==========================================================*/
+
+.faq-card{
+
+    margin-bottom:1rem;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+
+    transition:.2s;
+
+}
+
+.faq-card:hover{
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.faq-card summary{
+
+    list-style:none;
+
+    cursor:pointer;
+
+    padding:.85rem 1.25rem;
+
+    min-height:60px;
+
+    font-size:1.05rem;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.faq-card summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+.faq-card summary::after{
+
+    content:"\F282";
+
+    font-family:"bootstrap-icons";
+
+    color:var(--bs-primary);
+
+    font-size:1.1rem;
+
+    transition:.25s;
+
+}
+
+.faq-card[open] summary::after{
+
+    transform:rotate(180deg);
+
+}
+
+.faq-card>*:not(summary){
+
+    padding:0 1.25rem 1.25rem;
+
+}
+
+.faq-card p:last-child{
+
+    margin-bottom:0;
+
 }

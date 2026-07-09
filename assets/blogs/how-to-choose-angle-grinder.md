@@ -8,6 +8,13 @@ Choosing the correct machine depends on the application, disc size, motor power 
 
 ## Common Disc Sizes
 
+<img
+src="https://images.unsplash.com/photo-1649235303619-dc860ece9ffd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+width="600"
+height="425"
+alt="Professional Angle Grinder"
+loading="lazy">
+
 ### 100 mm (4 inch)
 
 Ideal for
@@ -51,16 +58,22 @@ Designed for
 - Construction projects
 
 ---
+<img
+src="https://images.unsplash.com/photo-1692719094491-2746e82a8595?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+width="600"
+height="425"
+alt="Professional Angle Grinder"
+loading="lazy">
 
 # Motor Power
 
 Choose according to workload.
 
 | Power | Application |
-|-------|-------------|
+|---------|-------------|
 | 650–850W | DIY |
 | 900–1200W | Workshop |
-| 1300–1800W | Industrial |
+| 1300–1800W  | Industrial |
 | 2000W+ | Heavy Duty |
 
 ---
