@@ -1,271 +1,143 @@
 /*==========================================================
  JK Enterprises
  router.js
- Version : 1.0
+ Version : 2.0
  Client Side Router
 ==========================================================*/
 
 "use strict";
 
-import Utils from "./utils.js";
-
-const Router={
+const Router = {
 
     /*======================================================
      Initialize
     ======================================================*/
 
-    init(){
+    init() {
 
-        this.page=this.currentPage();
-
-        this.params=this.parameters();
+        this.page = this.currentPage();
+        this.params = Object.fromEntries(
+            new URLSearchParams(window.location.search)
+        );
 
     },
-
-
 
     /*======================================================
      Current Page
     ======================================================*/
 
-    currentPage(){
+    currentPage() {
 
-        let page=window.location.pathname
-
+        const page = window.location.pathname
             .split("/")
-
             .pop()
-
             .toLowerCase();
 
-        if(!page) page="index.html";
-
-        return page;
+        return page || "index.html";
 
     },
-
-
 
     /*======================================================
      URL Parameters
     ======================================================*/
 
-    parameters(){
+    query(key, fallback = "") {
 
-        return Object.fromEntries(
-
-            new URLSearchParams(
-
-                window.location.search
-
-            )
-
-        );
+        return this.params[key] ?? fallback;
 
     },
-
-
 
     /*======================================================
-     Helpers
+     Common Parameters
     ======================================================*/
 
-    id(){
+    id() {
 
-        return Utils.query("id");
-
-    },
-
-
-
-    slug(){
-
-        return Utils.query("slug");
+        return this.query("id");
 
     },
 
+    slug() {
 
-
-    brand(){
-
-        return Utils.query("brand");
+        return this.query("slug");
 
     },
 
+    brand() {
 
-
-    category(){
-
-        return Utils.query("category");
+        return this.query("brand");
 
     },
 
+    category() {
 
-
-    search(){
-
-        return Utils.query("q");
+        return this.query("category");
 
     },
 
+    search() {
 
-
-    pageNumber(){
-
-        return parseInt(
-
-            Utils.query("page") || 1,
-
-            10
-
-        );
+        return this.query("q");
 
     },
 
+    sort() {
 
-
-    sort(){
-
-        return Utils.query("sort") || "";
+        return this.query("sort");
 
     },
 
+    filter() {
 
-
-    filter(){
-
-        return Utils.query("filter") || "";
+        return this.query("filter");
 
     },
 
+    pageNumber() {
 
+        return Number(this.query("page", 1));
+
+    },
 
     /*======================================================
-     Checks
+     Page Checks
     ======================================================*/
 
-    is(name){
+    is(name) {
 
-        return this.page===name.toLowerCase();
-
-    },
-
-
-
-    isHome(){
-
-        return this.page==="index.html";
+        return this.page === name.toLowerCase();
 
     },
 
+    isHome() { return this.is("index.html"); },
 
+    isProducts() { return this.is("products.html"); },
 
-    isProducts(){
+    isProduct() { return this.is("product.html"); },
 
-        return this.page==="products.html";
+    isBrands() { return this.is("brands.html"); },
 
-    },
+    isBrand() { return this.is("brand.html"); },
 
+    isBlogs() { return this.is("blogs.html"); },
 
+    isBlog() { return this.is("blog.html"); },
 
-    isProduct(){
+    isSearch() { return this.is("search.html"); },
 
-        return this.page==="product.html";
+    isCart() { return this.is("cart.html"); },
 
-    },
+    isCheckout() { return this.is("checkout.html"); },
 
+    isContact() { return this.is("contact.html"); },
 
+    isAbout() { return this.is("about.html"); },
 
-    isBrands(){
+    isFAQ() { return this.is("faq.html"); },
 
-        return this.page==="brands.html";
-
-    },
-
-
-
-    isBrand(){
-
-        return this.page==="brand.html";
-
-    },
-
-
-
-    isBlogs(){
-
-        return this.page==="blogs.html";
-
-    },
-
-
-
-    isBlog(){
-
-        return this.page==="blog.html";
-
-    },
-
-
-
-    isSearch(){
-
-        return this.page==="search.html";
-
-    },
-
-
-
-    isCart(){
-
-        return this.page==="cart.html";
-
-    },
-
-
-
-    isCheckout(){
-
-        return this.page==="checkout.html";
-
-    },
-
-
-
-    isContact(){
-
-        return this.page==="contact.html";
-
-    },
-
-
-
-    isAbout(){
-
-        return this.page==="about.html";
-
-    },
-
-
-
-    isFAQ(){
-
-        return this.page==="faq.html";
-
-    },
-
-
-
-    is404(){
-
-        return this.page==="404.html";
-
-    }
+    is404() { return this.is("404.html"); }
 
 };
-
-
 
 Router.init();
 
